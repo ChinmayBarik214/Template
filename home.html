@@ -9,7 +9,7 @@
     <!-- E2 -->
 </head>
 <body>
-    <header style="margin: 0 60px;">
+    <header>
         <div>
             <a href="/"><img src="images/Logo.png" height="100" width="100"></a>
         </div>
@@ -39,12 +39,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 60px;
             position: sticky;
             top: 0;
             transition: background-color 0.3s ease-out;
         }
         header div {
             display: flex;
+            justify-content: center;
             align-items: center;
         }
         header span {
@@ -154,19 +156,28 @@
         }
     </script>
     <style>
+        #arrow {
+            height: 60px;
+            width: 60px;
+            border-radius: 5px;
+            background-color: #0052CC;
+        }
         #arrow > span #menu-top {
+            background-color: #fff;
             transition: all;
             transition-duration: .6s;
             transition-timing-function: ease;
             width: 35px;
         }
         #arrow > span #menu-mid {
+            background-color: #fff;
             transition: all;
             transition-duration: .6s;
             transition-timing-function: ease;
             width: 35px;
         }
         #arrow > span #menu-low {
+            background-color: #fff;
             transition: all;
             transition-duration: .6s;
             transition-timing-function: ease;
@@ -208,9 +219,32 @@
             width: 35px;
             height: 5px;
             background-color: black;
-            margin: 0 3px 3px 0;
+            margin: 4px 0 4px 0;
         }
     </style>
-    
+    <section class="banner">
+        <video autoplay muted loop id="myVideo">
+            <source src="images/4rsmokehouse-video.mov" type="video/mp4">
+        </video>
+    </section>
+    <style>
+        video {
+            background-position: center;
+            transform: scale(2.25);
+            height: 100%;
+        }
+        .banner {
+            overflow: hidden;
+            background-color: gray;
+            z-index: -1;
+            height: 600px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+        body {
+            min-height: 1000px;
+        }
+    </style>
 </body>
 </html>
