@@ -226,14 +226,26 @@
         <video autoplay muted loop id="myVideo">
             <source src="images/4rsmokehouse-video.mov" type="video/mp4">
         </video>
+        <div class="backdrop"></div>
+        <div class="banner-head">
+            Family Owned. Locally Made.<br>
+            Community Focused.<br>
+            <a href="#" class="banner-btn">Order takeout & delivery</a>
+            <a href="#" class="banner-btn">order catering</a>
+        </div>
     </section>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
         video {
             background-position: center;
             transform: scale(2.25);
             height: 100%;
         }
-        .banner {
+        section.banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
             overflow: hidden;
             background-color: gray;
             z-index: -1;
@@ -242,8 +254,33 @@
             position: absolute;
             top: 0;
         }
-        body {
-            min-height: 1000px;
+        div.backdrop {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+        }
+        div.banner-head {
+            position: absolute;
+            color: white;
+            font-family: 'Fredericka the Great', cursive;
+            font-weight: 400;
+            font-size: 4rem;
+            text-align: center;
+            padding: 0 100px;
+            text-transform: uppercase;
+        }
+        .banner-btn {
+            font-size: 1rem;
+            background-color: #E0592A;
+            margin: 0 16px;
+            padding: 16px 32px;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 400;
         }
     </style>
 </body>
