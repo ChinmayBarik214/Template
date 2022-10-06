@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h2>New Arrivals</h2>
+    <div class="container">
+        <div class="height product">
+            <div class="prod-desc">
+                <div class="prod-img-container">
+                <img src="images/item1.webp">
+                </div>
+                <h4>La DoubleJ</h4>
+                <span>St. Moritz Reversible Jacket</span>
+                <span>₹1450 to buy</span>
+            </div>
+            <div class="prod-btn-container">
+                <button class="prod-btn">Add to cart</button>
+            </div>
+        </div>
+        <div class="item2 height product">2</div>
+        <div class="item3 height product">3</div>
+        <div class="item4 height product">4</div>
+        <div class="item5 height product">5</div>
+        <div class="item5 height product">7</div>
+        <div class="item4 height product">6</div>
+        <div class="item4 height product">8</div>
+        <div class="item5 height product">9</div>
+        <div class="item4 height product">10</div>
+        <div class="item5 height product">11</div>
+    </div>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        .prod-desc {
+            display: flex;
+            flex-direction: column;
+        }
+        .height {
+            height: 540px;
+        }
+        .prod-img-container {
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+        }
+        .product {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .product:hover {
+            outline: 2px solid #ddd;
+        }
+        .product div h4 {
+            margin: 6px 0 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .product div span {
+            font-size: 0.825rem;
+        }
+        .prod-btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .prod-btn {
+            padding: 8px 16px;
+            margin: 12px 4px;
+            width: 100%;
+            background-color: #1F513F;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            height: 2.5rem;
+        }
+        .item2{background:LightSalmon;}
+        .item3{background:PaleTurquoise;}
+        .item4{background:LightPink;}
+        .item5{background:PaleGreen;}
+        .container {
+          font-size: 40px;
+          height: auto;
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          grid-template-rows: repeat(auto-fill, 1fr);
+          grid-gap: 10px;
+          padding: 0 60px;
+        }
+    </style>
+</body>
+</html>
