@@ -283,5 +283,79 @@
             font-weight: 400;
         }
     </style>
+    <section class="banner-break">
+        <h3>Start earning bigger, better, and quicker rewards</h3>
+        <nav>
+        <a href="#" class="break-btn-1">SIGN UP</a>
+        <a href="#" class="break-btn-2">SIGN IN</a>
+        </nav>
+    </section>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        section.banner-break h3, a {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .banner-break {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 500px;
+            height: 60px;
+            background-color: #fff;
+            text-transform: uppercase;
+            padding: 16px;
+            font-weight: 800;
+            padding: 0 120px;
+            color: #54565a;
+        }
+        .break-btn-1 {
+            background-color: #f3f0ed;
+            color: #e0592a;
+            margin: 0 16px;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .break-btn-2 {
+            background-color: #e0592a;
+            color: #f3f0ed;
+            margin: 0 16px;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+    <h2>New Arrivals</h2>
+    <div class="container">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item4">6</div>
+        <div class="item5">7</div>
+        <div class="item4">8</div>
+        <div class="item5">9</div>
+        <div class="item4">10</div>
+        <div class="item5">11</div>
+    </div>
+    <style>
+        .item1{background:LightSkyBlue;}
+        .item2{background:LightSalmon;}
+        .item3{background:PaleTurquoise;}
+        .item4{background:LightPink;}
+        .item5{background:PaleGreen;}
+      
+        .container {
+          font-size: 40px;
+          height: 1000px;
+          width: 100%;
+          background: LightGray;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          grid-template-rows: repeat(auto-fill, 1fr);
+          grid-gap: 10px;
+        }
+    </style>
 </body>
 </html>
