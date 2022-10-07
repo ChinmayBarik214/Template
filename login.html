@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     <header>
@@ -223,36 +223,33 @@
     <section class="form-container">
         <div class="vert-line"></div>
         <article class="form-main">
-            <h2>Sign up for Mailchimp</h2>
-            <p>Create a free account or <a href="login.html">log in</a></p>
+            <h2>Log in</h2>
+            <p>Need a Mailchimp account? <a href="login.html">Create an account</a></p>
             <label for="username">Username</label>
             <input id="username" type="text" name="username" class="form-control" required>
-            <label for="first-name">First Name</label>
-            <input id="first-name" type="text" name="username" class="form-control" required>
-            <label for="last-name">Last Name</label>
-            <input id="last-name" type="text" name="username" class="form-control" required>
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" class="form-control" required>
             <label for="password">Password</label>
             <input id="password" type="password" name="password" class="form-control" required>
-            <label for="password">Confirm Password</label>
-            <input id="password" type="password" name="password" class="form-control" required>
-            <button type="submit" id="sign-up" class="submit-btn">Sign up</button>
+            <button type="submit" id="sign-up" class="submit-btn">Log in</button>
         </article>
         <div class="form-img">
-            <div></div>
+            <img src="">
         </div>
     </section>
     <style>
+        html {
+            height: 100%;
+        }
         body {
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         .form-container {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
+            min-height: calc(100% - 100px);
         }
         .vert-line {
             background-color: #FFE01B;
@@ -309,8 +306,9 @@
         }
         .form-img {
             background-color: gray;
-            background-image: url(images/flowers.png);
-            width: 450px;
+            background-image: url(images/login-banner.jpg);
+            background-size: cover;
+            width: 1000px;
             overflow: hidden;
         }
         .form-img div {
