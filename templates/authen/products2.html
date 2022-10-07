@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="home.html"><img src="images/Logo.png" height="100" width="100"></a>
+        </div>
+        <div id="arrow" class="openbtn" onclick="openNav()">
+            <span class="left-of">
+                <div id="menu-top"></div>
+                <div id="menu-mid"></div>
+                <div id="menu-low"></div>
+            </span>
+            <span class="right-of" style="display: none;">MENU</span>
+        </div>
+    </header>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn hover-underline-animation" onclick="closeNav()">× CLOSE</a>
+        <div class="nav-pad">
+        <a href="products2.html" class="nav-link hover-underline-animation">Products</a><br>
+        <a href="#" class="nav-link hover-underline-animation">Work</a><br>
+        <a href="#" class="nav-link hover-underline-animation">Services</a><br>
+        <a href="#" class="nav-link hover-underline-animation">About</a><br>
+        </div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            position: sticky;
+            top: 0;
+            transition: background-color 0.3s ease-out;
+        }
+        header div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header span {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            margin: 20px;
+        }
+    </style>
+    <script>
+        var header = document.getElementsByTagName('header')[0];
+        header.style.backgroundColor = 'transparent';
+        window.onscroll = function (event) {
+            var scroll = window.pageYOffset;
+            if (scroll < 50) {
+                header.style.backgroundColor = 'transparent';
+            }
+            else {
+                // purple
+                header.style.backgroundColor = 'white';
+            }
+        }
+    </script>
+    <style>
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #FEF6F3;
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+        .nav-link {
+            text-decoration: none;
+            font-size: 3.5rem;
+            color: #323035;
+            transition: 0.3s;
+            line-height: 1.75;
+            font-family: Georgia, serif;
+            font-weight: 600;
+        }
+        .nav-link:hover, a.closebtn:hover {
+            color: hsl(200, 100%, 20%);
+        }
+        .sidebar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        .nav-pad {
+            padding-left: 128px;
+            padding-top: 137px;
+        }
+        a.closebtn {
+            position: absolute;
+            top: 36px;
+            right: 25px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #323035;
+        }
+    </style>
+    <style>
+        .hover-underline-animation {
+            position: relative;
+            color: #323035;
+        }
+        .hover-underline-animation:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.cssText = `
+            width: 670px;
+            border-left: 1000px solid rgba(0, 0, 0, 0.5);
+            background-clip: padding-box;
+            position: fixed;
+            `;
+            document.getElementById("arrow").style.marginLeft="250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.cssText = `
+            width: 0;
+            border: none;
+            `;
+            document.getElementById("main").style.marginLeft="0";
+        }
+    </script>
+    <style>
+        #arrow {
+            height: 60px;
+            width: 60px;
+            border-radius: 5px;
+            background-color: #0052CC;
+        }
+        #arrow > span #menu-top {
+            background-color: #fff;
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 35px;
+        }
+        #arrow > span #menu-mid {
+            background-color: #fff;
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 35px;
+        }
+        #arrow > span #menu-low {
+            background-color: #fff;
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 35px;
+        }
+        #arrow:hover {
+            cursor: pointer;
+        }
+        #arrow:hover > span #menu-top {
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 30px;
+            transform: rotate(-40.5deg);
+        }
+        #arrow:hover > span #menu-low {
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 30px;
+            transform: rotate(40.5deg);
+        }
+        #arrow:hover > span #menu-mid {
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            opacity: 0;
+        }
+        .left-of {
+            margin: 0 5px;
+            padding-top: 1px;
+        }
+        .right-of {
+            margin: 0 20px 0 0;
+            font-size: 2rem;
+        }
+        header div span div {
+            border-radius: 2px;
+            width: 35px;
+            height: 5px;
+            background-color: black;
+            margin: 4px 0 4px 0;
+        }
+    </style>
+    <div class="container">
+        <div class="height product">
+            <div class="prod-desc">
+                <div class="prod-img-container">
+                <img src="images/item1.webp">
+                </div>
+                <h4>St. Moritz Reversible Jacket</h4>
+                <span>La DoubleJ</span>
+                <span>₹1450 to buy</span>
+            </div>
+            <div class="prod-btn-container">
+                <button class="prod-btn">Add to cart</button>
+            </div>
+        </div>
+        <div class="height product">
+            <div class="prod-desc">
+                <div class="prod-img-container">
+                <img src="images/item2.webp">
+                </div>
+                <h4>Hollis Dickey Jacket</h4>
+                <span>Veronica Beard</span>
+                <span>₹598 to buy</span>
+            </div>
+            <div class="prod-btn-container">
+                <button class="prod-btn">Add to cart</button>
+            </div>
+        </div>
+        <div class="height product">
+            <div class="prod-desc">
+                <div class="prod-img-container">
+                <img src="images/item3.webp">
+                </div>
+                <h4>Hazel Sweater</h4>
+                <span>Rachel Antonoff</span>
+                <span>₹294 to buy</span>
+            </div>
+            <div class="prod-btn-container">
+                <button class="prod-btn">Add to cart</button>
+            </div>
+        </div>
+        <div class="height product">
+            <div class="prod-desc">
+                <div class="prod-img-container">
+                <img src="images/item4.webp">
+                </div>
+                <h4>Bow Drop Earrings</h4>
+                <span>Lele Sadoughi</span>
+                <span>₹145 to buy</span>
+            </div>
+            <div class="prod-btn-container">
+                <button class="prod-btn">Add to cart</button>
+            </div>
+        </div>
+        <div class="height product">
+            <div class="prod-desc">
+                <div class="prod-img-container">
+                <img src="images/item5.webp">
+                </div>
+                <h4>Dolly Fringe Turtleneck</h4>
+                <span>Central Park West</span>
+                <span>₹152 to buy</span>
+            </div>
+            <div class="prod-btn-container">
+                <button class="prod-btn">Add to cart</button>
+            </div>
+        </div>
+        <div class="height product">
+            <div class="prod-desc">
+                <div class="prod-img-container">
+                <img src="images/item6.webp">
+                </div>
+                <h4>Nico Blazer</h4>
+                <span>Central Park West</span>
+                <span>₹260 to buy</span>
+            </div>
+            <div class="prod-btn-container">
+                <button class="prod-btn">Add to cart</button>
+            </div>
+        </div>
+        <div class="height product">
+            <div class="prod-desc">
+                <div class="prod-img-container">
+                <img src="images/item7.webp">
+                </div>
+                <h4>Odense Jacket</h4>
+                <span>Elk</span>
+                <span>₹315 to buy</span>
+            </div>
+            <div class="prod-btn-container">
+                <button class="prod-btn">Add to cart</button>
+            </div>
+        </div>
+        <div class="height product">
+            <div class="prod-desc">
+                <div class="prod-img-container">
+                <img src="images/item8.webp">
+                </div>
+                <h4>Star Dust Sweater</h4>
+                <span>Perfect Moment</span>
+                <span>₹400 to buy</span>
+            </div>
+            <div class="prod-btn-container">
+                <button class="prod-btn">Add to cart</button>
+            </div>
+        </div>
+        <div class="height product">
+            <div class="prod-desc">
+                <div class="prod-img-container">
+                <img src="images/item9.webp">
+                </div>
+                <h4>Royce Pullover</h4>
+                <span>Anine Bing</span>
+                <span>₹349 to buy</span>
+            </div>
+            <div class="prod-btn-container">
+                <button class="prod-btn">Add to cart</button>
+            </div>
+        </div>
+        <div class="height product">
+            <div class="prod-desc">
+                <div class="prod-img-container">
+                <img src="images/item10.webp">
+                </div>
+                <h4>Lennox Bag</h4>
+                <span>Loeffler Randall</span>
+                <span>₹295 to buy</span>
+            </div>
+            <div class="prod-btn-container">
+                <button class="prod-btn">Add to cart</button>
+            </div>
+        </div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+        }
+        .prod-desc {
+            display: flex;
+            flex-direction: column;
+        }
+        .height {
+            height: 540px;
+        }
+        .prod-img-container {
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+        }
+        .product {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .product:hover {
+            outline: 2px solid #ddd;
+        }
+        .product div h4 {
+            margin: 6px 0 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .product div span {
+            font-size: 0.825rem;
+        }
+        .prod-btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .prod-btn {
+            cursor: pointer;
+            padding: 8px 16px;
+            margin: 12px 4px;
+            width: 100%;
+            background-color: #1F513F;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            height: 2.5rem;
+        }
+        .item2{background:LightSalmon;}
+        .item3{background:PaleTurquoise;}
+        .item4{background:LightPink;}
+        .item5{background:PaleGreen;}
+        .container {
+            box-sizing: border-box;
+            font-size: 40px;
+            height: auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-rows: repeat(auto-fill, 1fr);
+            grid-gap: 10px;
+            padding: 0 60px;
+        }
+    </style>
+</body>
+</html>
