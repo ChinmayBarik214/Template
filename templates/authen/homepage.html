@@ -13,15 +13,12 @@
         <div>
             <a href="/homepage"><img src="images/Logo.png" height="100" width="100"></a>
 
-            
-
-            {% comment %} <div>
-                {% if user.is_authenticated %}
-                
-                <h3>Hello!! {{ fname }} {{ lname}} </h3>
+            {% if user.is_authenticated %}
+        
+                <h3>Hello!! {{ fname }} </h3>
                 <h4>You are sucessfully logged in!! </h4>
-                
-            </div> {% endcomment %}
+            {% endif %}
+            
         </div>
         <div id="arrow" class="openbtn" onclick="openNav()">
             <span class="left-of">
@@ -294,11 +291,21 @@
         }
     </style>
     <section class="banner-break">
-        <h3>Start earning bigger, better, and quicker rewards</h3>
+
+        {% comment %} {% if user.is_authenticated %}
+        
+        <h3>Hello!! {{ fname }} </h3>
+        <h4>You are sucessfully logged in!! </h4> {% endif %} {% endcomment %}
+        
+        
         <nav>
         <a href="/signup" class="break-btn-1">SIGN UP</a>
         <a href="/signin" class="break-btn-2">SIGN IN</a>
         </nav>
+        
+
+        <h3>Start earning bigger, better, and quicker rewards</h3>
+        
     </section>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');

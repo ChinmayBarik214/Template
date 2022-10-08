@@ -59,7 +59,7 @@ def signin(request):
         
         else:
             messages.error(request, "The given credentials dont match!!")
-            redirect("homepage")
+            # redirect("homepage")
 
 
 
