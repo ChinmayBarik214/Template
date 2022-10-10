@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Products</title>
+    <script src="https://kit.fontawesome.com/d4e90025fd.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div>
             <a href="home.html"><img src="images/Logo.png" height="100" width="100"></a>
         </div>
+        <a href="products2.html">
+            <div class="header-mid">
+                <i class="fa-solid fa-shirt"></i>
+                <span>shop</span>
+            </div>
+        </a>
         <div id="arrow" class="openbtn" onclick="openNav()">
             <span class="left-of">
                 <div id="menu-top"></div>
@@ -20,6 +27,29 @@
             <span class="right-of" style="display: none;">MENU</span>
         </div>
     </header>
+    <style>
+        header a {
+            margin: 0 15px 0 auto;
+            text-decoration: none;
+            color: #000;
+        }
+        .header-mid {
+            cursor: pointer;
+            background-color: #eee;
+            height: 60px;
+            padding: 0 16px;
+            border-radius: 5px;
+        }
+        .header-mid:hover {
+            background-color: hsl(0, 0%, 90%);
+        }
+        .header-mid span {
+            margin: 0 0 0 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn hover-underline-animation" onclick="closeNav()">× CLOSE</a>
         <div class="nav-pad">
@@ -143,7 +173,7 @@
             background-clip: padding-box;
             position: fixed;
             `;
-            document.getElementById("arrow").style.marginLeft="250px";
+            document.getElementById("arrow").style.marginLeft="0px";
         }
         function closeNav() {
             document.getElementById("mySidebar").style.cssText = `
@@ -220,19 +250,92 @@
             margin: 4px 0 4px 0;
         }
     </style>
-    <h4>Checkout</h4>
-    <section class="checkout-section">
-        <article>a</article>
-        <div>b</div>
+    <h2 class="checkout-h2">Checkout</h2>
+    <section class="checkout-main">
+        <div style="width: 740px;">
+            <h3 class="checkout-h3">SHOPPING BAG</h3>
+            <div style="display: flex;">
+                <img class="cart-img" src="images/item1.webp">
+                <article class="cart-article">
+                    <h2>St. Moritz Reversible Jacket</h2>
+                    <span>La DoubleJ</span><br>
+                    <h3>₹1450</h3>
+                    <span style="font-size: 0.75rem">Qty: </span>
+                    <select name="qty" id="qty-dropdown">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select><br>
+                    <button id="remove">Remove</button>
+                </article>
+            </div>
+        </div>
+        <div class="summary">Order summary</div>
     </section>
     <style>
-        .checkout-section {
-            box-sizing: border-box;
+        .checkout-main {
             display: flex;
-            flex-direction: row;
-            width: 100%;
-            justify-content: space-between;
-            padding: 0 60px;
+            justify-content: center;
+        }
+        .checkout-h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 18px;
+            margin: 0 0 24px 0;
+            text-transform: uppercase;
+        }
+        .checkout-h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000;
+            padding: 12px 0;
+        }
+        .cart-img {
+            width: 120px;
+            height: 170px;
+        }
+        .cart-article h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            margin-bottom: 2px;
+        }
+        .cart-article span {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+        .cart-article h3 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 12px;
+            margin: 5px 10px 5px 0;
+        }
+        #qty-dropdown {
+            padding: 0 8px;
+        }
+        #remove {
+            cursor: pointer;
+            border:  1px solid rgb(221, 221, 221);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            height: 38px;
+            line-height: 18px;
+            width: 215px;
+            margin: 15px 0 2px;
+        }
+        .summary {
+            margin-left: 30px;
+            padding: 16px;
+            width: 370px;
+            height: 256px;
+            background-color: rgb(242, 242, 242);
         }
     </style>
 </body>

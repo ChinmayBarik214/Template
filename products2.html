@@ -12,10 +12,12 @@
         <div>
             <a href="home.html"><img src="images/Logo.png" height="100" width="100"></a>
         </div>
-        <div class="header-mid">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span>cart</span>
-        </div>
+        <a href="checkout.html">
+            <div class="header-mid">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>cart</span>
+            </div>
+        </a>
         <div id="arrow" class="openbtn" onclick="openNav()">
             <span class="left-of">
                 <div id="menu-top"></div>
@@ -26,13 +28,20 @@
         </div>
     </header>
     <style>
-        .header-mid {
+        header a {
             margin: 0 15px 0 auto;
+            text-decoration: none;
+            color: #000;
+        }
+        .header-mid {
             cursor: pointer;
             background-color: #eee;
             height: 60px;
             padding: 0 16px;
             border-radius: 5px;
+        }
+        .header-mid:hover {
+            background-color: hsl(0, 0%, 90%);
         }
         .header-mid span {
             margin: 0 0 0 3px;
