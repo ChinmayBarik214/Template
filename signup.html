@@ -226,7 +226,7 @@
             <h2>Sign up for Mailchimp</h2>
             <p>Create a free account or <a href="login.html">log in</a></p>
             <label for="username">Username</label>
-            <input id="username" type="text" name="username" class="form-control" required>
+            <input id="username" type="text" name="username" class="form-control" on="func1()">
             <label for="first-name">First Name</label>
             <input id="first-name" type="text" name="username" class="form-control" required>
             <label for="last-name">Last Name</label>
@@ -236,13 +236,37 @@
             <label for="password">Password</label>
             <input id="password" type="password" name="password" class="form-control" required>
             <label for="password">Confirm Password</label>
-            <input id="password" type="password" name="password" class="form-control" required>
+            <input id="conpassword" type="password" name="password" class="form-control" required>
             <button type="submit" id="sign-up" class="submit-btn">Sign up</button>
         </article>
         <div class="form-img">
             <div></div>
         </div>
     </section>
+    <script>
+        const username=document.getElementById('username');
+        const firstname=document.getElementById('first-name');
+        const lastname=document.getElementById('last-name');
+        const email=document.getElementById('email');
+        const password=document.getElementById('password');
+        const conpassword=document.getElementById('conpassword');
+        
+        const usernameV=document.getElementById('username').value.trim();
+        const firstnameV=document.getElementById('first-name').value.trim();
+        const lastnameV=document.getElementById('last-name').value.trim();
+        const emailV=document.getElementById('email').value.trim();
+        const passwordV=document.getElementById('password').value.trim();
+        const conpasswordV=document.getElementById('conpassword').value.trim();
+
+        function func1(){
+            if(usernameV.length<8){
+               username.style.borderColor="red";
+               alert('This is a required field')
+            }else{
+                username.style.borderColor="green";
+            }
+        }
+    </script>
     <style>
         body {
             display: flex;
