@@ -325,5 +325,162 @@
             border-radius: 5px;
         }
     </style>
+    <!-- 4 Item Grid-->
+    <div class="four-container">
+        <div class="four-item1"></div>
+        <div class="four-item2"><h2>More effective than traditional talk therapy.</h2><p>Cognitive behavioral therapy (CBT) is an evidence-based approach to mental and emotional wellness that <i>actually</i> works.</p><p>Our therapists and coaches use scientifically proven methods to teach you the skills you need in order to break negative patterns and habits</p><p>Through directive sessions you’ll build progress as you learn and practice actionable skills for improving all areas of your life.</p>
+            <a href="#" class="button-link"><div class="get-started">Get Started</div></a>
+        </div>
+        <div class="four-item3">
+            <div class="four-item3-heading1"></div>
+            <p>Begin with a personalized assessment that will match you with a highly qualified therapist that meets your specific needs.</p>
+            <div class="four-item3-heading2"></div>
+            <p>Secure, HIPAA compliant access to our library of CBT resources: videos, mindfulness exercises, online courses, webinars, and more!</p>
+            <div class="four-item3-heading3"></div>
+            <p>Our therapists, counselors, and coaches are individually vetted because our patients deserve working with the very best practitioners.</p>
+        </div>
+        <div class="four-item4">
+            <div class="four-item4-item1"><h2>It all starts with a few simple questions…</h2></div>
+            <div class="four-item4-item2"><a href="#" class="four-item4-link">Online Therapy for Individuals ➡</a></div>
+            <div class="four-item4-item3"></div>
+            <div class="four-item4-item4"></div>
+            <div class="four-item4-item5"><a href="#" class="four-item4-link">⬅ Online Therapy for Groups</a></div>
+            <div class="four-item4-item6"><a href="#" class="four-item4-link">Online Coaching ➡</a></div>
+            <div class="four-item4-item7"></div>
+        </div>
+    </div>
+    <!-- 4 Item Grid-->
+    <style>
+        .button-link {
+            text-decoration: none;
+            color: #fff;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        .four-container{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto auto;
+            grid-template-areas: 
+            "image contenta"
+            "contentb contentc";
+        }
+        .four-item1{
+            background-image: url("../images/city2.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            min-height: 400px;
+            grid-area: image;
+        }
+        .four-item2{
+            background-color: white;
+            min-height: 400px;
+            grid-area: contenta;
+            padding: 12px 18px;
+            margin: 0.618em;
+            font-family: 'Poppins', sans-serif;
+            font-size: 21px;
+            letter-spacing: 0.03em;
+            line-height: 1.6em;
+        }
+        .four-item3{
+            background-color: white;
+            min-height: 400px;
+            grid-area: contentb;
+            padding: 12px 18px;
+            margin: 0.618em;
+            font-family: 'Poppins', sans-serif;
+            font-size: 21px;
+            letter-spacing: 0.03em;
+            line-height: 1.6em;
+        }
+        .four-item4{
+            background-color: rgb(97,141,43);
+            min-height: 400px;
+            grid-area: contentc;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto repeat(3, 1fr);
+            grid-template-areas: 
+            "contenta contenta"
+            "contentb contentc"
+            "contentd contente"
+            "contentf contentg";
+            padding: 12px 18px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 21px;
+            letter-spacing: 0.03em;
+            line-height: 1.6em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+            .four-item4-item1{
+                grid-area: contenta;
+                
+            }
+            .four-item4-item2{
+                align-self: center;
+            }
+            .four-item4-item5{
+                align-self: center;
+            }
+            .four-item4-item6{
+                align-self: center;
+            }
+            .four-item4-link{
+                text-decoration: none;
+                color: white;
+                font-size: 16px;
+                letter-spacing: 0.15em;
+                line-height: 1.1em;
+            }
+            .four-item4-item3{
+                background-image: url("../images/phone-girl.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            .four-item4-item4{
+                background-image: url("../images/group-hands.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 50px;
+            }
+            .four-item4-item7{
+                background-image: url("../images/laptop-man.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        .get-started{
+            border-radius: 5px;
+            padding: 12px 18px;
+            margin: 0.618em;
+            background-color: rgb(142,199,61);
+            width: 130px;
+            margin-left: 0;
+        }
+        .get-started:hover{
+            background-color: rgb(181, 228, 116);
+            transition: 0.2s;
+        }
+        .four-item3-heading1{
+            background-image: url("../images/headings/Personalized.png");
+            background-size: 20em;
+            min-height: 4em;
+            background-repeat: no-repeat;
+        }
+        .four-item3-heading2{
+            background-image: url("../images/headings/Private.png");
+            background-size: 20em;
+            min-height: 4em;
+            background-repeat: no-repeat;
+        }
+        .four-item3-heading3{
+            background-image: url("../images/headings/Professional.png");
+            background-size: 20em;
+            min-height: 4em;
+            background-repeat: no-repeat;
+        }
+    </style>
 </body>
 </html>
