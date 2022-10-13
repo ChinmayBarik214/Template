@@ -14,3 +14,12 @@
             50%{background-position:91% 100%}
             100%{background-position:10% 0%}
         }
+
+Run:
+ python manage.py runserver
+ then ctrl+click
+Update:
+ ctrl+s
+ refresh
+Dispose:
+ctrl+c
