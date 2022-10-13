@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +11,7 @@
 <body>
     <header>
         <div>
-            <a href="home.html"><img src="images/Logo.png" height="100" width="100"></a>
+            <a href="home.html"><img src="{%static "images/Logo.png" %}" height="100" width="100"></a>
         </div>
         <div id="arrow" class="openbtn" onclick="openNav()">
             <span class="left-of">
@@ -224,7 +226,7 @@
         <div class="vert-line"></div>
         <article class="form-main">
             <h2>Log in</h2>
-            <p>Need a Mailchimp account? <a href="login.html">Create an account</a></p>
+            <p>Need a Mailchimp account? <a href="/login">Create an account</a></p>
             <label for="username">Username</label>
             <input id="username" type="text" name="username" class="form-control" required>
             <label for="password">Password</label>
@@ -306,7 +308,7 @@
         }
         .form-img {
             background-color: gray;
-            background-image: url(images/login-banner.jpg);
+            background-image: url("{%static "images/login-banner.jpg" %}");
             background-size: cover;
             width: 1000px;
             overflow: hidden;
