@@ -1,4 +1,8 @@
-import email
+# import csv
+from email import message
+import smtplib, ssl
+from email.message import EmailMessage
+
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
@@ -75,3 +79,49 @@ def signin(request):
 def signout(request):
     logout(request)
     return redirect('homepage')
+
+# msg=EmailMessage()
+# msg.set_content('Hello there!!! \nTHANK YOU FOR SUSCRIBING INTO OUR BLOGPOST!!! \n Check for New blogs at our website!!')
+# msg['From']="abhaychandra2499@gmail.com"
+# email=""
+# username=""
+
+def blogs(request):
+    if request.method=='POST':
+        username = request.POST["username"]
+        email= request.POST["email"]
+
+        # msg["To"] = email
+        # msg['Subject']="Hi, "+username+" Thank you for Subscription for our BlogPost Services"
+        # server= smtplib.SMTP_SSL("smtp.gmail.com",465)
+        # server.login("abhaychandra2499@gmail.com", "")  #change email
+        # server.send_message(msg)
+
+        port = 465  # For SSL
+        password = "pndvybfxbrqymukx"
+
+        sender_email = "abhaychandra2499@gmail.com"  # Enter your address
+        receiver_email = email # Enter receiver address
+
+        msg="Hi, "+username+" Thank you for Subscription for our BlogPost Services"
+
+        # Create a secure SSL context
+        context = ssl.create_default_context()
+
+        with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, msg)
+            
+
+
+        
+    return render(request,'authen/blogs.html')
+
+# def read_info():
+#     with open('susinfo.csv', 'r') as file:
+#         reader = csv.reader(file)
+#         a=[]
+#         for row in reader:
+#             a.append(row)
+#         useremail=row[-1]
+#         return useremail
