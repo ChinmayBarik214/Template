@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="homepage.html"><img src="images/Logo.png" height="100" width="100"></a>
+        </div>
+        <div id="arrow" class="openbtn" onclick="openNav()">
+            <span class="left-of">
+                <div id="menu-top"></div>
+                <div id="menu-mid"></div>
+                <div id="menu-low"></div>
+            </span>
+            <span class="right-of" style="display: none;">MENU</span>
+        </div>
+    </header>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn hover-underline-animation" onclick="closeNav()">× CLOSE</a>
+        <div class="nav-pad">
+        <a href="products2.html" class="nav-link hover-underline-animation">Products</a><br>
+        <a href="#" class="nav-link hover-underline-animation">Work</a><br>
+        <a href="#" class="nav-link hover-underline-animation">Services</a><br>
+        <a href="#" class="nav-link hover-underline-animation">About</a><br>
+        </div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            position: sticky;
+            top: 0;
+            transition: background-color 0.3s ease-out;
+        }
+        header div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header span {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            margin: 20px;
+        }
+    </style>
+    <script>
+        var header = document.getElementsByTagName('header')[0];
+        header.style.backgroundColor = 'transparent';
+        window.onscroll = function (event) {
+            var scroll = window.pageYOffset;
+            if (scroll < 50) {
+                header.style.backgroundColor = 'transparent';
+            }
+            else {
+                // purple
+                header.style.backgroundColor = 'white';
+            }
+        }
+    </script>
+    <style>
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #FEF6F3;
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+        .nav-link {
+            text-decoration: none;
+            font-size: 3.5rem;
+            color: #323035;
+            transition: 0.3s;
+            line-height: 1.75;
+            font-family: Georgia, serif;
+            font-weight: 600;
+        }
+        .nav-link:hover, a.closebtn:hover {
+            color: hsl(200, 100%, 20%);
+        }
+        .sidebar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        .nav-pad {
+            padding-left: 128px;
+            padding-top: 137px;
+        }
+        a.closebtn {
+            position: absolute;
+            top: 36px;
+            right: 25px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #323035;
+        }
+    </style>
+    <style>
+        .hover-underline-animation {
+            position: relative;
+            color: #323035;
+        }
+        .hover-underline-animation:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.cssText = `
+            width: 670px;
+            border-left: 1000px solid rgba(0, 0, 0, 0.5);
+            background-clip: padding-box;
+            position: fixed;
+            `;
+            document.getElementById("arrow").style.marginLeft="250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.cssText = `
+            width: 0;
+            border: none;
+            `;
+            document.getElementById("main").style.marginLeft="0";
+        }
+    </script>
+    <style>
+        #arrow {
+            height: 60px;
+            width: 60px;
+            border-radius: 5px;
+            background-color: #0052CC;
+        }
+        #arrow > span #menu-top {
+            background-color: #fff;
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 35px;
+        }
+        #arrow > span #menu-mid {
+            background-color: #fff;
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 35px;
+        }
+        #arrow > span #menu-low {
+            background-color: #fff;
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 35px;
+        }
+        #arrow:hover {
+            cursor: pointer;
+        }
+        #arrow:hover > span #menu-top {
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 30px;
+            transform: rotate(-40.5deg);
+        }
+        #arrow:hover > span #menu-low {
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 30px;
+            transform: rotate(40.5deg);
+        }
+        #arrow:hover > span #menu-mid {
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            opacity: 0;
+        }
+        .left-of {
+            margin: 0 5px;
+            padding-top: 1px;
+        }
+        .right-of {
+            margin: 0 20px 0 0;
+            font-size: 2rem;
+        }
+        header div span div {
+            border-radius: 2px;
+            width: 35px;
+            height: 5px;
+            background-color: black;
+            margin: 4px 0 4px 0;
+        }
+    </style>
+    <section class="form-container">
+        <div class="vert-line"></div>
+        <article class="form-main">
+            <h2>Sign up for Mailchimp</h2>
+            <p>Log in  or <a href="/signup">Create a free account</a></p>
+            <form action="/signin" method="POST">
+            {% csrf_token %}
+            
+                <label for="username">Enter Your Registered Username</label>
+                <input id="username" type="text" name="username" class="form-control" required>
+
+                <label for="password"> Your Password:</label>
+                <input id="password" type="password" name="pass1" class="form-control" required>
+
+                <button type="submit" id="sign-up" class="submit-btn">Sign in</button>
+
+            </form>
+            
+        </article>
+        <div class="form-img">
+            <div></div>
+        </div>
+    </section>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .vert-line {
+            background-color: #FFE01B;
+            width: 8px;
+        }
+        .form-main {
+            display: flex;
+            flex-direction: column;
+            padding: 0 15px;
+            width: 600px;
+            margin-bottom: 12px;
+        }
+        .form-main h2 {
+            margin: 0 0 6px 0;
+            color: rgb(36, 28, 21);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 2.2rem;
+        }
+        .form-main p {
+            margin: 0 0 24px 0;
+            color: rgb(36, 28, 21);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+        .form-main p a {
+            color: rgb(0, 124, 137);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .form-main label {
+            color: rgb(36, 28, 21);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 18px;
+            padding-bottom: 12px;
+        }
+        .form-main input {
+            background-color: #fff;
+            border-radius: 2px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 20px;
+            margin-bottom: 24px;
+            min-height: 46px;
+            min-width: 50px;
+            padding: 0 15px;
+            border: 1px solid rgba(36,28,21,0.3);
+        }
+        .form-img {
+            background-color: gray;
+            background-image: url(images/flowers.png);
+            width: 450px;
+            overflow: hidden;
+        }
+        .form-img div {
+            float: right;
+            background-color: #FFE01B;
+            width: 385px;
+            height: 50vh;
+        }
+        .submit-btn {
+            cursor: pointer;
+            background-color: rgb(0, 124, 137);
+            border-radius: 2px;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            height: 48px;
+            padding: 0 42px;
+            border: none;
+        }
+    </style>
+</body>
+</html>

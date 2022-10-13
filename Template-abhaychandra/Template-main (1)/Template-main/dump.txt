@@ -1,0 +1,16 @@
+ <div class="grad-line"></div>
+        .grad-line {
+            height: 400px;
+            opacity: .8;
+            background: linear-gradient(-90deg, #ee7752, #e73c7e, #3716F7, #1d06a2);
+            background-size: 200% 200%;
+            animation-name: gradient;
+            animation-duration: 15s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+        @keyframes gradient { 
+            0%{background-position:10% 0%}
+            50%{background-position:91% 100%}
+            100%{background-position:10% 0%}
+        }
