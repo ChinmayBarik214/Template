@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -321,7 +323,7 @@
         }
         .form-img {
             background-color: gray;
-            background-image: url({%static "images/flowers.png" %});
+            background-image: url("{%static "images/flowers.png" %}");
             width: 450px;
             overflow: hidden;
         }
