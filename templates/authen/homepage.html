@@ -485,5 +485,78 @@
             background-repeat: no-repeat;
         }
     </style>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <section class="phone-sec">
+    <h2 class="phone-h2">Innovation and interactivity on the app</h2>
+    <div class="phone-con">
+        <div>
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_8uiwfx2f.json"  background="transparent"  speed="1"  style="height: 600px;"  loop  autoplay></lottie-player>
+        </div>
+        <div class="phone-i2">
+            <h3>Face recognition on the app</h3>
+            <h3>User Authentication</h3>
+            <h3>Messaging/Call Feature</h3>
+            <h3>E-commerce Functionality</h3>
+            <a href="#">Explore now</a>
+            <h3 style="text-align: center; margin-bottom: 0">OR</h3>
+            <img src="{% static 'images/QR.png' %}" alt="scan to open app">
+            <span>Scan to open</span>
+        </div>
+    </div>
+    </section>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        .phone-sec {
+            background-color: #eefaff;
+            padding: 40px 0 0 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .phone-h2 {
+            text-align: center;
+            color: rgb(69, 69, 69);
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 32px;
+            margin: 0;
+        }
+        .phone-i2 span {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .phone-i2 h3 {
+            color: rgb(69, 69, 69);
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 22px;
+        }
+        .phone-i2 a {
+            background-color: rgb(255, 146, 49);
+            background-image: linear-gradient(to right, #e9872f, #ff7062);
+            border-radius: 32px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 20px;
+            text-align: center;
+            text-decoration: none;
+            padding: 16px 0;
+        }
+        .phone-i2 a:hover {
+            cursor: pointer;
+        }
+        .phone-i2 img {
+            width: 100px;
+            margin: 0 auto;
+        }
+        .phone-con {
+            display: flex;
+            justify-content: center;
+        }
+        .phone-i2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
 </body>
 </html>
