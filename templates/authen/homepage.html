@@ -68,6 +68,7 @@
             position: sticky;
             top: 0;
             transition: background-color 0.3s ease-out;
+            z-index: 2;
         }
         header div {
             display: flex;
@@ -170,7 +171,7 @@
             background-clip: padding-box;
             position: fixed;
             `;
-            document.getElementById("arrow").style.marginLeft="250px";
+            document.getElementById("arrow").style.marginLeft="0px";
         }
         function closeNav() {
             document.getElementById("mySidebar").style.cssText = `
@@ -630,35 +631,96 @@
     </style>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <section class="contact-sec">
-        <h2>Send us feedback</h2>
         <div class="contact-con">
-        <div class="contact-left">
-            <label for="username">Username:</label>
+        <form class="contact-left">
+            <span class="contact-span">Send us feedback</span>
+            <label for="username"><h2>Username:</h2></label>
             <input type="text" name="username" id="username">
-            <label for="email">Email:</label>
+            <label for="email"><h2>Email:</h2></label>
             <input type="text" name="email" id="email">
-            <label for="feedback">Please provide your feedback</label>
-            <input type="text" name="feedback" id="feedback">
-            <input type="submit">
-        </div>
+            <label for="journey"><h2>Please provide your feedback:</h2></label>
+            <textarea id="journey" name="journey" class="input-textarea" placeholder="Enter your response here…"></textarea>
+            <button type="submit" id="submit" class="submit-btn">Submit</button>
+        </form>
         <div>
-            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_qq6gioyz.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_qq6gioyz.json"  background="transparent"  speed="1"  style="height: 100%"  loop  autoplay></lottie-player>
         </div>
         </div>
     </section>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        .contact-span {
+            text-align: center;
+            font-size: 2rem;
+        }
         .contact-sec {
             font-family: 'Montserrat', sans-serif;
+            background-color: #E1E1DF;
+            /* background-color: linear-gradient(-90deg, #dfdfdd, #f8f8f7); */
+            color: #fff;
+        }
+        .contact-con {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url("{%static "images/plant.jpg" %}");
+        }
+        .contact-left {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 5px;
+        }
+        .contact-sec h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.125rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+        }
+        .contact-sec input {
+            width: 100%;
+            margin-bottom: 12px;
+            padding: 0 15px;
+            background-color: #fff;
+            border-radius: 1px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            max-width: 835px;
+            min-height: 46px;
+            border: 1px solid #000;
+        }
+        .contact-sec textarea {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            margin: 0 0 5px;
+            max-width: 835px;
+            min-height: 120px;
+            padding: 0.625px;
+            resize: vertical;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            max-width: 835px;
+            padding: 0.75rem;
+            background-color: #37af65;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
         }
         .contact-con {
             display: flex;
             justify-content: space-between;
-            padding: 0 60px 0;
+            padding: 20px 60px;
         }
         .contact-left {
             display: flex;
             flex-direction: column;
+            width: 100%;
         }
     </style>
 </body>
