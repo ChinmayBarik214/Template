@@ -274,7 +274,7 @@
             overflow: hidden;
             background-color: gray;
             z-index: -1;
-            height: 600px;
+            height: 800px;
             width: 100%;
             position: absolute;
             top: 0;
@@ -326,7 +326,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 500px;
+            margin-top: 700px;
             height: 60px;
             background-color: #fff;
             text-transform: uppercase;
@@ -377,6 +377,22 @@
         </div>
     </div>
     <!-- 4 Item Grid-->
+    <style>
+        .four-item2{
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 1s ease-in-out;
+        }
+        .four-item3{
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 1s ease-in-out 0.3s;
+        }
+        .active{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    </style>
     <style>
         .button-link {
             text-decoration: none;
@@ -510,6 +526,36 @@
         }
     </style>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+        const item2 = document.querySelector(".four-item2");
+        const item3 = document.querySelector(".four-item3");
+        const position2=item2.getBoundingClientRect().top;
+        const position3=item3.getBoundingClientRect().top;
+        const screenPosition=window.innerHeight;
+
+        window.addEventListener('scroll',()=>{
+            const item2 = document.querySelector(".four-item2");
+            const position2=item2.getBoundingClientRect().top;
+            const screenPosition=window.innerHeight;
+
+            if(screenPosition>(position2+50)){
+                item2.classList.add('active');
+            }else{
+                item2.classList.remove('active');
+            }
+        })
+        window.addEventListener('scroll',()=>{
+            const item3=document.querySelector(".four-item3");
+            const position3=item3.getBoundingClientRect().top;
+            const screenPosition=window.innerHeight;
+            if(screenPosition>(position3+50)){
+                item3.classList.add('active');
+            }else{
+                item3.classList.remove('active')
+            }
+        })
+        
+    </script>
     <section class="phone-sec">
     <h2 class="phone-h2">Innovation and interactivity on the app</h2>
     <div class="phone-con">
