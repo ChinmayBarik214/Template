@@ -558,5 +558,38 @@
             justify-content: center;
         }
     </style>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <section class="contact-sec">
+        <h2>Send us feedback</h2>
+        <div class="contact-con">
+        <div class="contact-left">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email">
+            <label for="feedback">Please provide your feedback</label>
+            <input type="text" name="feedback" id="feedback">
+            <input type="submit">
+        </div>
+        <div>
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_qq6gioyz.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+        </div>
+        </div>
+    </section>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        .contact-sec {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .contact-con {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 60px 0;
+        }
+        .contact-left {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </body>
 </html>
