@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- E1 -->
+    <title>Template</title>
+    <!-- E2 -->
+</head>
+<body>
+    <header>
+        <div>
+            <a href="home.html"><img src="images/Logo.png" height="100" width="100"></a>
+        </div>
+        <div id="arrow" class="openbtn" onclick="openNav()">
+            <span class="left-of">
+                <div id="menu-top"></div>
+                <div id="menu-mid"></div>
+                <div id="menu-low"></div>
+            </span>
+            <span class="right-of" style="display: none;">MENU</span>
+        </div>
+    </header>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn hover-underline-animation" onclick="closeNav()">× CLOSE</a>
+        <div class="nav-pad">
+        <a href="products3.html" class="nav-link hover-underline-animation">Products</a><br>
+        <a href="#" class="nav-link hover-underline-animation">Work</a><br>
+        <a href="#" class="nav-link hover-underline-animation">Services</a><br>
+        <a href="about.html" class="nav-link hover-underline-animation">About</a><br>
+        </div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            position: sticky;
+            top: 0;
+            transition: background-color 0.3s ease-out;
+        }
+        header div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header span {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            margin: 20px;
+        }
+    </style>
+    <script>
+        var header = document.getElementsByTagName('header')[0];
+        header.style.backgroundColor = 'transparent';
+        window.onscroll = function (event) {
+            var scroll = window.pageYOffset;
+            if (scroll < 50) {
+                header.style.backgroundColor = 'transparent';
+            }
+            else {
+                // purple
+                header.style.backgroundColor = 'white';
+            }
+        }
+    </script>
+    <style>
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #FEF6F3;
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+        .nav-link {
+            text-decoration: none;
+            font-size: 3.5rem;
+            color: #323035;
+            transition: 0.3s;
+            line-height: 1.75;
+            font-family: Georgia, serif;
+            font-weight: 600;
+        }
+        .nav-link:hover, a.closebtn:hover {
+            color: hsl(200, 100%, 20%);
+        }
+        .sidebar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        .nav-pad {
+            padding-left: 128px;
+            padding-top: 137px;
+        }
+        a.closebtn {
+            position: absolute;
+            top: 36px;
+            right: 25px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #323035;
+        }
+    </style>
+    <style>
+        .hover-underline-animation {
+            position: relative;
+            color: #323035;
+        }
+        .hover-underline-animation:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.cssText = `
+            width: 670px;
+            border-left: 1000px solid rgba(0, 0, 0, 0.5);
+            background-clip: padding-box;
+            position: fixed;
+            `;
+            document.getElementById("arrow").style.marginLeft="250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.cssText = `
+            width: 0;
+            border: none;
+            `;
+            document.getElementById("main").style.marginLeft="0";
+        }
+    </script>
+    <style>
+        #arrow {
+            height: 60px;
+            width: 60px;
+            border-radius: 5px;
+            background-color: #0052CC;
+        }
+        #arrow > span #menu-top {
+            background-color: #fff;
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 35px;
+        }
+        #arrow > span #menu-mid {
+            background-color: #fff;
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 35px;
+        }
+        #arrow > span #menu-low {
+            background-color: #fff;
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 35px;
+        }
+        #arrow:hover {
+            cursor: pointer;
+        }
+        #arrow:hover > span #menu-top {
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 30px;
+            transform: rotate(-40.5deg);
+        }
+        #arrow:hover > span #menu-low {
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            width: 30px;
+            transform: rotate(40.5deg);
+        }
+        #arrow:hover > span #menu-mid {
+            transition: all;
+            transition-duration: .6s;
+            transition-timing-function: ease;
+            opacity: 0;
+        }
+        .left-of {
+            margin: 0 5px;
+            padding-top: 1px;
+        }
+        .right-of {
+            margin: 0 20px 0 0;
+            font-size: 2rem;
+        }
+        header div span div {
+            border-radius: 2px;
+            width: 35px;
+            height: 5px;
+            background-color: black;
+            margin: 4px 0 4px 0;
+        }
+    </style>
+    <section class="banner">
+        <video autoplay muted loop id="myVideo">
+            <source src="images/4rsmokehouse-video.mov" type="video/mp4">
+        </video>
+        <div class="backdrop"></div>
+        <div class="banner-head">
+            Family Owned. Locally Made.<br>
+            Community Focused.<br>
+            <a href="#" class="banner-btn">Order takeout & delivery</a>
+            <a href="#" class="banner-btn">order catering</a>
+        </div>
+    </section>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+        video {
+            background-position: center;
+            transform: scale(2.25);
+            height: 100%;
+        }
+        section.banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background-color: gray;
+            z-index: -1;
+            height: 600px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+        div.backdrop {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+        }
+        div.banner-head {
+            position: absolute;
+            color: white;
+            font-family: 'Fredericka the Great', cursive;
+            font-weight: 400;
+            font-size: 4rem;
+            text-align: center;
+            padding: 0 100px;
+            text-transform: uppercase;
+        }
+        .banner-btn {
+            font-size: 1rem;
+            background-color: #E0592A;
+            margin: 0 16px;
+            padding: 16px 32px;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 400;
+        }
+    </style>
+    <section class="banner-break">
+        <h3>Start earning bigger, better, and quicker rewards</h3>
+        <nav>
+        <a href="signup.html" class="break-btn-1">SIGN UP</a>
+        <a href="login.html" class="break-btn-2">SIGN IN</a>
+        </nav>
+    </section>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        section.banner-break h3, a {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .banner-break {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 500px;
+            height: 60px;
+            background-color: #fff;
+            text-transform: uppercase;
+            padding: 16px;
+            font-weight: 800;
+            padding: 0 120px;
+            color: #54565a;
+        }
+        .break-btn-1 {
+            background-color: #f3f0ed;
+            color: #e0592a;
+            margin: 0 16px;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .break-btn-2 {
+            background-color: #e0592a;
+            color: #f3f0ed;
+            margin: 0 16px;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+    <!-- 4 Item Grid-->
+    <div class="four-container">
+        <div class="four-item1"></div>
+        <div class="four-item2"><h2>More effective than traditional talk therapy.</h2><p>Cognitive behavioral therapy (CBT) is an evidence-based approach to mental and emotional wellness that <i>actually</i> works.</p><p>Our therapists and coaches use scientifically proven methods to teach you the skills you need in order to break negative patterns and habits</p><p>Through directive sessions you’ll build progress as you learn and practice actionable skills for improving all areas of your life.</p>
+            <a href="#" class="button-link"><div class="get-started">Get Started</div></a>
+        </div>
+        <div class="four-item3">
+            <div class="four-item3-heading1"></div>
+            <p>Begin with a personalized assessment that will match you with a highly qualified therapist that meets your specific needs.</p>
+            <div class="four-item3-heading2"></div>
+            <p>Secure, HIPAA compliant access to our library of CBT resources: videos, mindfulness exercises, online courses, webinars, and more!</p>
+            <div class="four-item3-heading3"></div>
+            <p>Our therapists, counselors, and coaches are individually vetted because our patients deserve working with the very best practitioners.</p>
+        </div>
+        <div class="four-item4">
+            <div class="four-item4-item1"><h2>It all starts with a few simple questions…</h2></div>
+            <div class="four-item4-item2"><a href="#" class="four-item4-link">Online Therapy for Individuals ➡</a></div>
+            <div class="four-item4-item3"></div>
+            <div class="four-item4-item4"></div>
+            <div class="four-item4-item5"><a href="#" class="four-item4-link">⬅ Online Therapy for Groups</a></div>
+            <div class="four-item4-item6"><a href="#" class="four-item4-link">Online Coaching ➡</a></div>
+            <div class="four-item4-item7"></div>
+        </div>
+    </div>
+    <!-- 4 Item Grid-->
+    <style>
+        .button-link {
+            text-decoration: none;
+            color: #fff;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        .four-container{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto auto;
+            grid-template-areas: 
+            "image contenta"
+            "contentb contentc";
+        }
+        .four-item1{
+            background-image: url("images/city2.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            min-height: 400px;
+            grid-area: image;
+        }
+        .four-item2{
+            background-color: white;
+            min-height: 400px;
+            grid-area: contenta;
+            padding: 12px 18px;
+            margin: 0.618em;
+            font-family: 'Poppins', sans-serif;
+            font-size: 21px;
+            letter-spacing: 0.03em;
+            line-height: 1.6em;
+        }
+        .four-item3{
+            background-color: white;
+            min-height: 400px;
+            grid-area: contentb;
+            padding: 12px 18px;
+            margin: 0.618em;
+            font-family: 'Poppins', sans-serif;
+            font-size: 21px;
+            letter-spacing: 0.03em;
+            line-height: 1.6em;
+        }
+        .four-item4{
+            background-color: rgb(97,141,43);
+            min-height: 400px;
+            grid-area: contentc;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto repeat(3, 1fr);
+            grid-template-areas: 
+            "contenta contenta"
+            "contentb contentc"
+            "contentd contente"
+            "contentf contentg";
+            padding: 12px 18px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 21px;
+            letter-spacing: 0.03em;
+            line-height: 1.6em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+            .four-item4-item1{
+                grid-area: contenta;
+                
+            }
+            .four-item4-item2{
+                align-self: center;
+            }
+            .four-item4-item5{
+                align-self: center;
+            }
+            .four-item4-item6{
+                align-self: center;
+            }
+            .four-item4-link{
+                text-decoration: none;
+                color: white;
+                font-size: 16px;
+                letter-spacing: 0.15em;
+                line-height: 1.1em;
+            }
+            .four-item4-item3{
+                background-image: url("images/phone-girl.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            .four-item4-item4{
+                background-image: url("images/group-hands.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 50px;
+            }
+            .four-item4-item7{
+                background-image: url("images/laptop-man.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        .get-started{
+            border-radius: 5px;
+            padding: 12px 18px;
+            margin: 0.618em;
+            background-color: rgb(142,199,61);
+            width: 130px;
+            margin-left: 0;
+        }
+        .get-started:hover{
+            background-color: rgb(181, 228, 116);
+            transition: 0.2s;
+        }
+        .four-item3-heading1{
+            background-image: url("images/headings/Personalized.png");
+            background-size: 20em;
+            min-height: 4em;
+            background-repeat: no-repeat;
+        }
+        .four-item3-heading2{
+            background-image: url("images/headings/Private.png");
+            background-size: 20em;
+            min-height: 4em;
+            background-repeat: no-repeat;
+        }
+        .four-item3-heading3{
+            background-image: url("images/headings/Professional.png");
+            background-size: 20em;
+            min-height: 4em;
+            background-repeat: no-repeat;
+        }
+    </style>
+</body>
+</html>
