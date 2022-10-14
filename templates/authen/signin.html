@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 {% load static %}
 
 <html lang="en">
@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     <header>
         <div>
-            <a href="homepage.html"><img src="{%static "images/Logo.png" %}" height="100" width="100"></a>
+            <a href="home.html"><img src="{%static "images/Logo.png" %}" height="100" width="100"></a>
         </div>
         <div id="arrow" class="openbtn" onclick="openNav()">
             <span class="left-of">
@@ -225,36 +225,33 @@
     <section class="form-container">
         <div class="vert-line"></div>
         <article class="form-main">
-            <h2>Sign up for Mailchimp</h2>
-            <p>Log in  or <a href="/signup">Create a free account</a></p>
-            <form action="/signin" method="POST">
-            {% csrf_token %}
-            
-                <label for="username">Enter Your Registered Username</label>
-                <input id="username" type="text" name="username" class="form-control" required>
-
-                <label for="password"> Your Password:</label>
-                <input id="password" type="password" name="pass1" class="form-control" required>
-
-                <button type="submit" id="sign-up" class="submit-btn">Sign in</button>
-
-            </form>
-            
+            <h2>Log in</h2>
+            <p>Need a Mailchimp account? <a href="/login">Create an account</a></p>
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username" class="form-control" required>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" class="form-control" required>
+            <button type="submit" id="sign-up" class="submit-btn">Log in</button>
         </article>
         <div class="form-img">
-            <div></div>
+            <img src="">
         </div>
     </section>
     <style>
+        html {
+            height: 100%;
+        }
         body {
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         .form-container {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
+            min-height: calc(100% - 100px);
         }
         .vert-line {
             background-color: #FFE01B;
@@ -311,8 +308,9 @@
         }
         .form-img {
             background-color: gray;
-            background-image: url('{%static "images/flowers.png" %}');
-            width: 450px;
+            background-image: url("{%static "images/login-banner.jpg" %}");
+            background-size: cover;
+            width: 1000px;
             overflow: hidden;
         }
         .form-img div {
