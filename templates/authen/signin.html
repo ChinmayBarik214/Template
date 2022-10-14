@@ -11,7 +11,7 @@
 <body>
     <header>
         <div>
-            <a href="home.html"><img src="{%static "images/Logo.png" %}" height="100" width="100"></a>
+            <a href="/homepage"><img src="{%static "images/Logo.png" %}" height="100" width="100"></a>
         </div>
         <div id="arrow" class="openbtn" onclick="openNav()">
             <span class="left-of">
@@ -226,12 +226,16 @@
         <div class="vert-line"></div>
         <article class="form-main">
             <h2>Log in</h2>
-            <p>Need a Mailchimp account? <a href="/login">Create an account</a></p>
+            <p>Need a Mailchimp account? <a href="/signin">Create an account</a></p>
+
+            <form action="/signin" method="post" style="display: flex; flex-direction: column;">
+            {% csrf_token %}
             <label for="username">Username</label>
             <input id="username" type="text" name="username" class="form-control" required>
             <label for="password">Password</label>
             <input id="password" type="password" name="password" class="form-control" required>
             <button type="submit" id="sign-up" class="submit-btn">Log in</button>
+            </form>
         </article>
         <div class="form-img">
             <img src="">

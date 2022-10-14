@@ -31,13 +31,13 @@ def signup(request):
         pass1= request.POST["pass1"]
         pass2= request.POST["pass2"]
 
-        myuser = User.objects.create_user(username,email, pass1)
-        myuser.firstname=fname
-        myuser.lastname=lname
+        user = User.objects.create_user(username, email, pass1)
+        user.first_name=fname
+        user.last_name=lname
 
         
 
-        myuser.save()
+        user.save()
 
         messages.success(request,"Your account has been successfully created!!")
 
@@ -52,17 +52,19 @@ def signin(request):
 
     if request.method =="POST":
         username = request.POST["username"]
-        pass1= request.POST["pass1"]
+        pass1= request.POST["password"]
 
-        myuser = authenticate(username=username, password=pass1)  # check ki entered value matches or not
+        user = authenticate(username=username, password=pass1)  # check ki entered value matches or not
 
-        if myuser is not None:
-            login(request, myuser) 
-
-            fname= myuser.first_name
-            lname= myuser.last_name
-
-            return render(request,"authen/homepage.html",{'fname':fname,'lname':lname})   
+        if user is not None:
+            login(request, user)
+            fname= user.first_name
+            lname= user.last_name
+            
+            print(fname, lname)                                              #For debug, remove it later
+            # messages.success(request, f' welcome {username} !!')
+            diction={'fname':fname,'lname':lname}
+            return render(request,"authen/homepage.html",diction)   
         
         else:
             messages.error(request, "The given credentials dont match!!")

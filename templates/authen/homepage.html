@@ -14,6 +14,21 @@
         <div>
             <a href="/homepage"><img src="{% static 'images/Logo.png' %}" height="100" width="100"></a>
         </div>
+        <div class="header-mid">
+            <span>
+                {% if user.is_authenticated %}
+                
+                Hi!! {{ request.user.fname }} , You're now logged into epikness !!
+                
+                {% else %}
+
+                User Status:
+                GUEST, youre not logged in!
+
+                {% endif %}
+
+            </span>
+        </div>
         <div id="arrow" class="openbtn" onclick="openNav()">
             <span class="left-of">
                 <div id="menu-top"></div>
@@ -23,6 +38,15 @@
             <span class="right-of" style="display: none;">MENU</span>
         </div>
     </header>
+    <style>
+        .header-mid {
+            background-color: #eee;
+            height: 60px;
+            padding: 0 16px;
+            border-radius: 5px;
+            margin: 0 10px 0 auto;
+        }
+    </style>
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn hover-underline-animation" onclick="closeNav()">× CLOSE</a>
         <div class="nav-pad">
@@ -289,7 +313,7 @@
         <nav>
         <a href="/signup" class="break-btn-1">SIGN UP</a>
         <a href="/signin" class="break-btn-2">SIGN IN</a>
-        <a href="/logout" class="break-btn-1">SIGN OUT</a>
+        <a href="/signout" class="break-btn-1">SIGN OUT</a>
 
         </nav>
     </section>
