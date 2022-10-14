@@ -98,9 +98,9 @@ def blogs(request):
         # server.send_message(msg)
 
         port = 465  # For SSL
-        password = "pndvybfxbrqymukx"
+        password = "ojciemiketvyhrrs"
 
-        sender_email = "abhaychandra2499@gmail.com"  # Enter your address
+        sender_email = "comfestdpsazaadnagarcf01@gmail.com"  # Enter your address
         receiver_email = email # Enter receiver address
 
         msg="Hi, "+username+" Thank you for Subscription for our BlogPost Services"
