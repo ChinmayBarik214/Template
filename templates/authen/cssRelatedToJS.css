@@ -1,0 +1,14 @@
+.four-item2{
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 1s ease-in-out;
+}
+.four-item3{
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 1s ease-in-out 0.3s;
+}
+.active{
+    opacity: 1;
+    transform: translateX(0px);
+}
