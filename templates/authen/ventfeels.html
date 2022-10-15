@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #transcript {
+  width: 100%;
+  height: 150px;
+}
+    </style>
+</head>
+<body>
+    <textarea type="text" name="q" id="transcript" placeholder="Speak" class="keyboardInput"></textarea>
+
+<input  id="action" type="button" onclick="toggle()" value="Start Speaking"/>
+<input  id="action2" type="button" onclick="toggle2()" value="Stop Speaking"/>
+<script>
+    var recognition = new webkitSpeechRecognition();
+recognition.continuous = true;
+recognition.interimResults = true;
+recognition.lang = "en-IN";
+
+var listening = false;
+var final_transcript = '';
+recognition.onresult = function(event) {
+    var interim_transcript = '';
+
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+      }
+    }
+    // document.getElementById('transcript').innerHTML = final_transcript;
+    document.getElementById('transcript').innerHTML = final_transcript;
+    console.log(interim_transcript, final_transcript);
+
+  };
+
+function toggle() {
+    recognition.start();
+  // document.getElementById('action').value = "Stop";
+}
+function toggle2(){
+  recognition.stop();
+  // document.getElementById('action2').value="Start";
+}
+</script>
+</body>
+</html>
