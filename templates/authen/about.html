@@ -222,9 +222,11 @@
         }
     </style>
     <section class="about-main">
-        <h3>The most powerful theme on earth</h3>
+        <h3>The most powerful team on earth</h3>
         <h2>We are a team of expert designers</h2>
-        <p>Lorem ipsum dolor sit amet, consec tetur adipiscing the egtlit sekido eiusmod of the tempor incid dunt ulert labore et dolore all magna aliqua mi bibendum neque egestas.</p>
+        <p>
+            A bunch of developers come together to create a safe space for people struggling with mental health issues.
+        </p>
     </section>
     <style>
         .about-main {
@@ -268,26 +270,32 @@
         <div class="fig fig1">
             <div class="fig-info">
                 <div class="green-line"></div>
-                <h4>Della Wilde</h4>
-                <p>Chief Executive Officer</p>
+                <h4>Chinmay Barik</h4>
+                <p>HTML, CSS Specialist</p>
             </div>
         </div>
         <div class="fig fig2">
             <div class="fig-info">
                 <div class="green-line"></div>
-                <h4>Della Wilde</h4>
-                <p>Chief Executive Officer</p>
+                <h4>Abhay Chandra</h4>
+                <p>SQL, Python, database pro</p>
             </div>
         </div>
         <div class="fig fig3">
             <div class="fig-info">
                 <div class="green-line"></div>
-                <h4>Della Wilde</h4>
-                <p>Chief Executive Officer</p>
+                <h4>Arihant Srivastava</h4>
+                <p>javascript master</p>
             </div>
         </div>
     </article>
     <style>
+        .fig h4 {
+            padding-left: 10px;
+        }
+        .fig p {
+            padding-left: 10px;
+        }
         .about-container {
             display: flex;
             flex-direction: row;
@@ -302,6 +310,7 @@
             background-size: 130%;
             transition: background-size 0.1s ease;
             position: relative;
+            border: 1px solid gray;
         }
         .fig:hover {
             cursor: pointer;
@@ -314,7 +323,7 @@
             background-image: url({% static 'images/abhay.gif' %});
         }
         .fig3 {
-            background-image: url({% static 'images/aihant.gif' %});
+            background-image: url({% static 'images/arihant.gif' %});
         }
         .fig-info {
             position: absolute;
