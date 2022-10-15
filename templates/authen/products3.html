@@ -113,9 +113,13 @@
     </script>
 </head>
 <body>
-    <header>
+    <header style="height: 100px;">
         <div>
+<<<<<<< HEAD
+            <a href="/homepage"><img src="{% static 'images/Logo3.png' %}" height="100" width="100"></a>
+=======
             <a href="/"><img src="{% static 'images/Logo.png' %}" height="100" width="100"></a>
+>>>>>>> f14dd3670c71b8da5ce4dd89c7c14741896d8e3e
         </div>
         <div id="arrow" class="openbtn" onclick="openNav()">
             <span class="left-of">
@@ -330,32 +334,32 @@
         <h2 class="section-header">SHOP</h2>
         <div class="shop-items">
             <div class="shop-item">
-                <span class="shop-item-title">Album 1</span>
-                <img class="shop-item-image" src="{% static 'images/Album 1.png' %}">
+                <span class="shop-item-title">Understanding Mental Illness</span>
+                <img class="shop-item-image" src="{% static 'images/book1.jpg' %}">
                 <div class="shop-item-details">
                     <span class="shop-item-price">$12.99</span>
                     <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                 </div>
             </div>
             <div class="shop-item">
-                <span class="shop-item-title">Album 2</span>
-                <img class="shop-item-image" src="{% static 'images/Album 2.png' %}">
+                <span class="shop-item-title">Anxiety Relief for Teens</span>
+                <img class="shop-item-image" src="{% static 'images/book2.webp' %}">
                 <div class="shop-item-details">
                     <span class="shop-item-price">$14.99</span>
                     <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
                 </div>
             </div>
             <div class="shop-item">
-                <span class="shop-item-title">Album 3</span>
-                <img class="shop-item-image" src="{% static 'images/Album 3.png' %}">
+                <span class="shop-item-title">Mental Health workout</span>
+                <img class="shop-item-image" src="{% static 'images/book3.jpg' %}">
                 <div class="shop-item-details">
                     <span class="shop-item-price">$9.99</span>
                     <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                 </div>
             </div>
             <div class="shop-item">
-                <span class="shop-item-title">Album 4</span>
-                <img class="shop-item-image" src="{% static 'images/Album 4.png' %}">
+                <span class="shop-item-title">Guide to Black Mental Health</span>
+                <img class="shop-item-image" src="{% static 'images/book4.webp' %}">
                 <div class="shop-item-details">
                     <span class="shop-item-price">$19.99</span>
                     <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
@@ -493,6 +497,8 @@
 
         .shop-item-image {
             height: 250px;
+            display: block;
+            margin: auto;
         }
 
         .shop-item-details {
