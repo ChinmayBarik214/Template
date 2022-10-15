@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -114,7 +115,7 @@
 <body>
     <header>
         <div>
-            <a href="home.html"><img src="images/Logo.png" height="100" width="100"></a>
+            <a href="/homepage"><img src="{% static 'images/Logo.png' %}" height="100" width="100"></a>
         </div>
         <div id="arrow" class="openbtn" onclick="openNav()">
             <span class="left-of">
@@ -128,10 +129,10 @@
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn hover-underline-animation" onclick="closeNav()">× CLOSE</a>
         <div class="nav-pad">
-        <a href="products2.html" class="nav-link hover-underline-animation">Products</a><br>
+        <a href="/products3" class="nav-link hover-underline-animation">Products</a><br>
         <a href="#" class="nav-link hover-underline-animation">Work</a><br>
         <a href="#" class="nav-link hover-underline-animation">Services</a><br>
-        <a href="about.html" class="nav-link hover-underline-animation">About</a><br>
+        <a href="/about" class="nav-link hover-underline-animation">About</a><br>
         </div>
     </div>
     <style>
@@ -330,7 +331,7 @@
         <div class="shop-items">
             <div class="shop-item">
                 <span class="shop-item-title">Album 1</span>
-                <img class="shop-item-image" src="Images/Album 1.png">
+                <img class="shop-item-image" src="{% static 'images/Album 1.png' %}">
                 <div class="shop-item-details">
                     <span class="shop-item-price">$12.99</span>
                     <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
@@ -338,7 +339,7 @@
             </div>
             <div class="shop-item">
                 <span class="shop-item-title">Album 2</span>
-                <img class="shop-item-image" src="Images/Album 2.png">
+                <img class="shop-item-image" src="{% static 'images/Album 2.png' %}">
                 <div class="shop-item-details">
                     <span class="shop-item-price">$14.99</span>
                     <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
@@ -346,7 +347,7 @@
             </div>
             <div class="shop-item">
                 <span class="shop-item-title">Album 3</span>
-                <img class="shop-item-image" src="Images/Album 3.png">
+                <img class="shop-item-image" src="{% static 'images/Album 3.png' %}">
                 <div class="shop-item-details">
                     <span class="shop-item-price">$9.99</span>
                     <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
@@ -354,7 +355,7 @@
             </div>
             <div class="shop-item">
                 <span class="shop-item-title">Album 4</span>
-                <img class="shop-item-image" src="Images/Album 4.png">
+                <img class="shop-item-image" src="{% static 'images/Album 4.png' %}">
                 <div class="shop-item-details">
                     <span class="shop-item-price">$19.99</span>
                     <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
