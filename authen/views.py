@@ -173,8 +173,8 @@ def ventfeels(request):
 
 
 
-def product3(request):
-    return render(request,'authen/product3.html')
+def products3(request):
+    return render(request,'authen/products3.html')
 
 
 
