@@ -250,12 +250,10 @@
     </style>
     <section class="banner">
         <video autoplay muted loop id="myVideo">
-            <source src="{% static 'images/4rsmokehouse-video.mov' %}" type="video/mp4">
+            <source src="{% static 'images/girl-on-phone.mp4' %}" type="video/mp4">
         </video>
-        <div class="backdrop"></div>
-        <div class="banner-head">
-            Family Owned. Locally Made.<br>
-            Community Focused.<br>
+        <!-- <div class="backdrop"></div> -->
+        <div class="banner-head">Feeling better starts<br> with a single message<br>
             <a href="#" class="banner-btn">Order takeout & delivery</a>
             <a href="#" class="banner-btn">order catering</a>
         </div>
@@ -263,8 +261,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
         video {
-            background-position: center;
-            transform: scale(2.25);
+            background-position: top;
+            transform: scale(1.5);
             height: 100%;
         }
         section.banner {
@@ -275,7 +273,7 @@
             overflow: hidden;
             background-color: gray;
             z-index: -1;
-            height: 800px;
+            height: 600px;
             width: 100%;
             position: absolute;
             top: 0;
@@ -327,7 +325,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 700px;
+            margin-top: 500px;
             height: 60px;
             background-color: #fff;
             text-transform: uppercase;
