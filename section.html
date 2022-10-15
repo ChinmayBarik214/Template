@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+header{
+    background: url("fit.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    text-align: center;
+    color: aliceblue;
+}
+section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+}
+.text1{
+    width: 500px;
+    font-size: 16px;
+    opacity: 0;
+    transform: translate(30px);
+    transition: all 1s ease-in-out;
+}
+.text2{
+    width: 500px;
+    font-size: 16px;
+    opacity: 0;
+    transform: translate(30px);
+    transition: all 1s ease-in-out;
+}
+.text3{
+    width: 500px;
+    font-size: 16px;
+    opacity: 0;
+    transform: translate(30px);
+    transition: all 1s ease-in-out;
+}
+.text4{
+    width: 500px;
+    font-size: 16px;
+    opacity: 0;
+    transform: translate(30px);
+    transition: all 1s ease-in-out;
+}
+.text p{
+    color: blueviolet;
+}
+.text h1{
+    font-size: 36px;
+}
+img{
+    position: relative;
+}
+hr{
+    margin: 1rem 0;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.active{
+    opacity: 1;
+    transform: translateX(0px);
+}
+/* textanimation */
+.rotating-text{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 27px;
+    color: black;
+    transform: translateX(0px);
+    top: 10px;
+    right: 150px;
+    /* top: 80%;
+    left: 70%;  */
+    align-items: center;
+    justify-content: center;
+}
+.rotating-text p{
+    /* display: inline-flex; */
+    margin: 0;
+    vertical-align: top;
+}
+
+.rotating-text p .word{
+    position: absolute;
+    display: flex;
+    opacity: 0;
+}
+.rotating-text p .word .letter{
+    transform-origin: center center 25px;
+}
+.rotating-text p .word .letter.out{
+    transform: rotateX(90deg);
+    transition: 0.32s cubic-bezier(0.6,0,0.7,0.2);
+}
+.rotating-text p .word .letter.in{
+    transition: 0.8s ease;
+}
+.rotating-text p .word .letter.behind{
+    transform: rotateX(-90deg);
+}
+.w-1 {
+    color: #e74c3c;
+}
+.w-2 {
+    color: #8e44ad;
+}
+.w-3 {
+    color: #3498db;
+}
+.w-4 {
+    color: #28cc71;
+}
+.w-5 {
+    color: #f1c40f;
+}
+.rotating-text p .wordtwo{
+    position: absolute;
+    display: flex;
+    opacity: 0;
+}
+.rotating-text p .wordtwo .letter{
+    transform-origin: center center 25px;
+}
+.rotating-text p .wordtwo .letter.out{
+    transform: rotateX(90deg);
+    transition: 0.32s cubic-bezier(0.6,0,0.7,0.2);
+}
+.rotating-text p .wordtwo .letter.in{
+    transition: 0.8s ease;
+}
+.rotating-text p .wordtwo .letter.behind{
+    transform: rotateX(-90deg);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <h1>Information Related Mental Health</h1>
+            
+        </div>
+    </header>
+    <section>
+        <div class="text1">
+            <h1>What is Mental Health?</h1>
+            <hr>
+            <p>Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+                <br><br>
+
+                Over the course of your life, if you experience mental health problems, your thinking, mood, and behavior could be affected. Many factors contribute to mental health problems, including:
+                <br><br><ul>
+                <li> Biological factors, such as genes or brain chemistry <br>
+                <li> Life experiences, such as trauma or abuse <br>
+                <li> Family history of mental health problems </ul></p>
+            <br>
+            <!-- <button>Explore</button> -->
+        </div>
+        <img width="500px" height="500px" src="what-is-mental-health.jpg" alt="">
+        <div class="rotating-text">
+            <p>Mental Wellness</p>
+            <p>
+              <span class="word w-1">.</span>
+              <span class="word w-2">Is  Important.</span>
+              <span class="word w-3">Generates Positivity.</span>
+              <span class="word w-4">Keeps  Mind  Happy.</span>
+              <!-- <span class="word w-5">interesting.</span> -->
+            </p>
+          </div>
+    </section>
+    <section>
+        <img width="500px" height="500px" src="world-creativities-mental-illness.jpg" alt="">
+        <div class="text2">
+            <h1>Types of Mental Health Disorders </h1>
+            <hr>
+            <p>These specific mental illnesses typically fall into the seven categories of mental disorders: <br><ul>
+                <li> Anxiety Disorders. Many people experience some anxiety in their lives, but they find that it comes and goes. <br>
+                <li> Mood Disorders. <br>
+                <li> Psychotic Disorders. <br>
+                <li> Eating Disorders.  <br>
+                <li> Personality Disorders. <br>
+                <li> Dementia. <br>
+                <li> Autism. <br>
+            </ul></p>
+            <br>
+            <!-- <button>Explore</button> -->
+        </div>
+        
+        <!-- <div class="rotating-text">
+            <p>Mental Wellness</p>
+            <p>
+              <span class="word w-1">.</span>
+              <span class="word w-2">is important.</span>
+              <span class="word w-3">generates positivity.</span>
+              <span class="word w-4">fabulous.</span>
+              <span class="word w-5">interesting.</span>
+            </p>
+          </div> -->
+    </section>
+    <section>
+        <div class="text3">
+            <h1>Symptoms</h1>
+            <hr>
+            <p>
+                Signs and symptoms of mental illness can vary, depending on the disorder, circumstances and other factors. Mental illness symptoms can affect emotions, thoughts and behaviors. <br>
+                
+                Examples of signs and symptoms include: <br><br>
+                <ul>
+                <li> Feeling sad or down  <br>
+                <li> Confused thinking or reduced ability to concentrate <br>
+                <li> Excessive fears or worries, or extreme feelings of guilt <br>
+                <li> Extreme mood changes of highs and lows <br>
+                <li> Withdrawal from friends and activities <br>
+                <li> Significant tiredness, low energy or problems sleeping <br>
+                <li> Detachment from reality (delusions), paranoia or hallucinations <br>
+                <li> Inability to cope with daily problems or stress <br>
+                <li> Trouble understanding and relating to situations and to people <br>
+                <li> Problems with alcohol or drug use <br>
+                <li> Major changes in eating habits <br>
+                <li> Sex drive changes <br>
+                <li> Excessive anger, hostility or violence <br>
+                <li> Suicidal thinking <br><br>
+                </ul>
+                Sometimes symptoms of a mental health disorder appear as physical problems, such as stomach pain, back pain, headaches, or other unexplained aches and pains.</p>
+            <br>
+            <!-- <button>Explore</button> -->
+        </div>
+        <img width="500px" height="500px" src="9-signs-of-mental-illness.jpg" alt="">
+        <!-- <div class="rotating-text">
+            <p>Mental Wellness</p>
+            <p>
+              <span class="word w-1">.</span>
+              <span class="word w-2">is important.</span>
+              <span class="word w-3">generates positivity.</span>
+              <span class="word w-4">fabulous.</span>
+              <span class="word w-5">interesting.</span>
+            </p>
+          </div> -->
+    </section>
+    <section>
+        <img width="500px" height="500px" src="poster-with-handwritten-phrase-your-mental-health-matters.jpg" alt="">
+        <div class="text4">
+            <h1>Mental Health Matters</h1>
+            <hr>
+            <p>Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make healthy choices. 1. Mental health is important at every stage of life, from childhood and adolescence through adulthood. <br>
+                <h2>Stress</h2> <br>
+                Stress is normal and everyone experiences it in response to situations considered threatening or dangerous. When you're stressed, your body responds by producing physical and mental reactions. These stress responses can be positive, keeping you alert to danger, motivated, or adaptable to new situations. <br>
+                <h2>Anxiety</h2> <br>
+                Anxiety is a feeling of fear, dread, and uneasiness. It might cause you to sweat, feel restless and tense, and have a rapid heartbeat. It can be a normal reaction to stress. For example, you might feel anxious when faced with a difficult problem at work, before taking a test, or before making an important decision. <br>
+                <h2>Depression</h2> <br>
+                Depression (also called major depressive disorder or clinical depression) is a common but serious mood disorder. It causes severe symptoms that affect how you feel, think, and handle daily activities, such as sleeping, eating, or working. Symptoms: <br>
+                
+                <ul>
+                <li> Persistent sad, anxious, or “empty” mood <br>
+                <li> Feelings of guilt, worthlessness, or helplessness or frustration or hopelessness<br>
+                <li> Loss of interest or pleasure in hobbies and activities <br>
+                <li> Decreased energy, fatigue, or feeling "slowed down" or oversleeping<br>
+                <li> Changes in appetite or unplanned weight changes <br>
+                <li> Thoughts of death or suicide, or suicide attempts <br>
+                <li> Aches or pains, headaches, cramps, digestive problems without clear physical cause, not easing even with treatment <br>
+                </ul>
+                </p>
+            <br>
+            <!-- <button>Explore</button> -->
+        </div>
+        
+        <div class="rotating-text">
+            <p></p>
+            <p>
+              <span class="wordtwo w-1">Don't Take Stress.</span>
+              <span class="wordtwo w-2">Challenge your Anxiety.</span>
+              <span class="wordtwo w-3">Build up your Flame.</span>
+              <span class="wordtwo w-4">And Remember,</span>
+              <span class="wordtwo w-5">You are Unstoppable.</span>
+            </p>
+          </div>
+    </section>
+    
+    <script>
+        let words = document.querySelectorAll(".word");
+words.forEach((word)=>{
+    let letters = word.textContent.split("");
+    word.textContent="";
+    letters.forEach((letter)=>{
+        let span=document.createElement("span")
+        span.textContent=letter;
+        span.className="letter";
+        word.append(span);
+    });
+});
+
+let currentWordIndex = 0;
+let maxWordIndex = words.length - 1;
+words[currentWordIndex].style.opacity="1";
+
+let rotateText=()=>{
+    let currentWord=words[currentWordIndex];
+    let nextWord=
+       currentWordIndex===maxWordIndex ? words[0] : words[currentWordIndex + 1];
+    //rotate out letters of current word
+    Array.from(currentWord.children).forEach((letter,i)=>{
+        setTimeout(()=>{
+            letter.className="letter out";
+        },i*80)
+    });
+
+    //reveal and rotate in letters of next word
+    nextWord.style.opacity="1";
+    Array.from(nextWord.children).forEach((letter,i)=>{
+        letter.className="letter behind";
+        setTimeout(()=>{
+            letter.className="letter in";
+        }, 340+i*80)
+    });
+    currentWordIndex=
+    currentWordIndex===maxWordIndex ? 0 : currentWordIndex+1;
+};
+
+rotateText();
+setInterval(rotateText,4000);
+
+let words2 = document.querySelectorAll(".wordtwo");
+words2.forEach((word)=>{
+    let letters = word.textContent.split("");
+    word.textContent="";
+    letters.forEach((letter)=>{
+        let span=document.createElement("span")
+        span.textContent=letter;
+        span.className="letter";
+        word.append(span);
+    });
+});
+
+let currentWordIndex2 = 0;
+let maxWordIndex2 = words2.length - 1;
+words2[currentWordIndex2].style.opacity="1";
+
+let rotateText2=()=>{
+    let currentWord=words2[currentWordIndex2];
+    let nextWord=
+       currentWordIndex2===maxWordIndex2 ? words2[0] : words2[currentWordIndex2 + 1];
+    //rotate out letters of current word
+    Array.from(currentWord.children).forEach((letter,i)=>{
+        setTimeout(()=>{
+            letter.className="letter out";
+        },i*80)
+    });
+
+    //reveal and rotate in letters of next word
+    nextWord.style.opacity="1";
+    Array.from(nextWord.children).forEach((letter,i)=>{
+        letter.className="letter behind";
+        setTimeout(()=>{
+            letter.className="letter in";
+        }, 340+i*80)
+    });
+    currentWordIndex2=
+    currentWordIndex2===maxWordIndex2 ? 0 : currentWordIndex2+1;
+};
+
+rotateText2();
+setInterval(rotateText2,4000);
+
+// textanimation2
+const text1 = document.querySelector(".text1");
+const position1 = text1.getBoundingClientRect().top;
+const screenPosition = window.innerHeight;
+
+window.addEventListener('scroll',()=>{
+    const text1 = document.querySelector(".text1");
+    const position1 = text1.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight;
+
+    if(screenPosition>(position1+10)){
+        text1.classList.add('active');
+    }else{
+        text1.classList.remove('active');
+    }
+})
+
+window.addEventListener('scroll',()=>{
+    const text2 = document.querySelector(".text2");
+    const position2 = text2.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight;
+
+    if(screenPosition>(position2+10)){
+        text2.classList.add('active');
+    }else{
+        text2.classList.remove('active');
+    }
+})
+window.addEventListener('scroll',()=>{
+    const text3 = document.querySelector(".text3");
+    const position3 = text3.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight;
+
+    if(screenPosition>(position3+10)){
+        text3.classList.add('active');
+    }else{
+        text3.classList.remove('active');
+    }
+})
+window.addEventListener('scroll',()=>{
+    const text4 = document.querySelector(".text4");
+    const position4 = text4.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight;
+
+    if(screenPosition>(position4+10)){
+        text4.classList.add('active');
+    }else{
+        text4.classList.remove('active');
+    }
+})
+    </script>
+</body>
+</html>
