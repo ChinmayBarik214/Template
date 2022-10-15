@@ -16,6 +16,8 @@ urlpatterns = [
     path('products3', views.products3, name="products3"),
     path('feedback', views.feedback, name="feedback"),
     path('relax', views.relax, name="relax"),
+    path('games', views.games, name="games"),
+
 
 
 
