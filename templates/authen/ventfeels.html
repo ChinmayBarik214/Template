@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vent it out</title>
+    <title>Just Vent</title>
+    <script src="https://kit.fontawesome.com/d4e90025fd.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div>
-            <a href="/homepage"><img src="{% static 'images/Logo2.png' %}" height="100" width="100"></a>
+            <a href="/homepage"><img src="{% static 'images/Logo3.png' %}" height="100" width="100"></a>
         </div>
         <div class="header-mid">
             <span>
@@ -89,7 +90,7 @@
             }
             else {
                 // purple
-                header.style.backgroundColor = 'white';
+                header.style.backgroundColor = 'transparent';
             }
         }
     </script>
@@ -247,17 +248,76 @@
         }
     </style>
     <style>
-        #transcript {
-            width: 100%;
-            height: 150px;
-        }
     </style>
-    <form action="/ventfeels" method="post">
-    <textarea type="text" name="vent" id="transcript" placeholder="Speak" class="keyboardInput"></textarea>
-    <input  id="action" type="button" onclick="toggle()" value="Start Speaking"/>
-    <input  id="action2" type="button" onclick="toggle2()" value="Stop Speaking"/>
+    <form class="vent-con" action="/ventfeels" method="post">
+    <h1 class="vent-h1">Vent it out</h1>
+    <div class="vent-int-con">
+    <button class="round-btn" id="action" type="button" onclick="toggle()"><i class="fa-solid fa-microphone"></i></button>
+    <button class="round-btn" id="action2" type="button" onclick="toggle2()"><i class="fa-solid fa-stop"></i></button>
+    </div>
+    <textarea type="text" name="vent" id="transcript" placeholder="Need to get something off your chest?" class="keyboardInput"></textarea>
     <button name="submit" type="submit" class="submit">Submit</button>
     </form>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+        body {
+            background-size: cover;
+            background-image: url("{%static "images/vent-bg2.jpg" %}");
+        }
+        .submit {
+            width: 100%;
+            height: 40px;
+            padding: 0.75rem;
+            background-color: #37af65;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
+            border: none;
+        }
+        .submit:hover {
+            background-color: hsl(143, 52%, 35%);
+        }
+        .round-btn {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            font-size: 3rem;
+            border: 0;
+            cursor: pointer;
+        }
+         #transcript {
+            width: 100%;
+            height: 300px;
+            padding: 0.625rem;
+            resize: vertical;
+            margin: 20px 0 10px 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 21px;
+            box-sizing: border-box;
+        }
+        .vent-h1 {
+            text-align: center;
+            font-size: 9rem;
+            margin: 0 0 20px 0;
+            font-family: 'Comforter Brush', cursive;
+            color: #fff;
+            font-weight: 200;
+            margin: 0;
+            line-height: 9rem;
+        }
+        .vent-con {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 60px;
+            margin-bottom: 20px;
+        }
+        .vent-int-con {
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
     <script>
         var recognition = new webkitSpeechRecognition();
     recognition.continuous = true;
