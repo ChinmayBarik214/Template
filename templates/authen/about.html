@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,7 @@
 <body>
     <header>
         <div>
-            <a href="home.html"><img src="images/Logo.png" height="100" width="100"></a>
+            <a href="/homepage"><img src="{% static 'images/Logo.png' %}" height="100" width="100"></a>
         </div>
         <div id="arrow" class="openbtn" onclick="openNav()">
             <span class="left-of">
@@ -23,10 +24,10 @@
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn hover-underline-animation" onclick="closeNav()">× CLOSE</a>
         <div class="nav-pad">
-        <a href="products2.html" class="nav-link hover-underline-animation">Products</a><br>
+        <a href="/products3" class="nav-link hover-underline-animation">Products</a><br>
         <a href="#" class="nav-link hover-underline-animation">Work</a><br>
         <a href="#" class="nav-link hover-underline-animation">Services</a><br>
-        <a href="about.html" class="nav-link hover-underline-animation">About</a><br>
+        <a href="/about" class="nav-link hover-underline-animation">About</a><br>
         </div>
     </div>
     <style>
@@ -307,13 +308,13 @@
             background-size: 140%;
         }
         .fig1 {
-            background-image: url(images/person1.jpg);
+            background-image: url({% static 'images/chinmay.gif' %});
         }
         .fig2 {
-            background-image: url(images/person1.jpg);
+            background-image: url({% static 'images/abhay.gif' %});
         }
         .fig3 {
-            background-image: url(images/person1.jpg);
+            background-image: url({% static 'images/aihant.gif' %});
         }
         .fig-info {
             position: absolute;
