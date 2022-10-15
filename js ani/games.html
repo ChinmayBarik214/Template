@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    
+    .one{
+        background-color: #00DDEB;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .two{
+        background-color: black;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        
+    }
 
 .rotating-text{
     font-family: sans-serif;
@@ -60,12 +76,12 @@
 /* CSS */
 .button-64 {
   align-items: center;
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  background-color: black; 
   border: 0;
-  border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  border-radius: 8px; 
+  box-shadow: black 0 15px 30px -5px; 
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: black;
   display: flex;
   font-family: Phantomsans, sans-serif;
   font-size: 20px;
@@ -85,12 +101,13 @@
 .button-64:active,
 .button-64:hover {
   outline: 0;
+  background-color: honeydew;
 }
 
 .button-64 span {
-  background-color: rgb(5, 6, 45);
+  background-color: black; 
   padding: 16px 24px;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   width: 100%;
   height: 100%;
   transition: 300ms;
@@ -105,10 +122,57 @@
     font-size: 24px;
     min-width: 196px;
   }
+} 
+@import url('https://fonts.googleapis.com/css2? family=Quicksand:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand',sans-serif;
+}
+body{
+    background: yellowgreen;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+ul{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    position: relative;
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 4em;
+    text-decoration: none;
+    /* color: #fff; */
+    transition: 0.2s;
+}
+.cursor{
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.1s;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+ul li:hover ~ .cursor
+{
+    transform: scale(10);
 }
     </style>
 </head>
-<body>
+<body><section class="one">
     <div class="rotating-text">
         <h2>Relieve Your Mental Stress</h2> <br><br>
     <h3>To improve your reflexes and taking a break from your stressfull thoughts,</h3>
@@ -120,13 +184,26 @@
           <!-- <span class="word w-4">fabulous.</span>
           <span class="word w-5">interesting.</span> -->
         </p>
+        <h4>Find them in nearby Dark Zone</h4>
       </div>
-      <div>
-        <button class="button-64" type="button"><span class="text">Snake Chain</span></button>
-        <button class="button-64" type="button"><span class="text">Fruit Ninja</span></button>
-        <button class="button-64" type="button"><span class="text">Color Blast</span></button>
-      </div>
+    </section>
+      <section class="two">
+      <ul>
+        <li> <a href="#"><button class="button-64" type="button"><span class="text">Snake Chain</span></button></a></li>
+        <li> <a href="#"><button class="button-64" type="button"><span class="text">Fruit Ninja</span></button></a></li>
+        <li> <a href="#"><button class="button-64" type="button"><span class="text">Color Blast</span></button></a></li>
+        <div class="cursor"></div>
+      </ul>
+    </section>
+
       <!-- JS -->
+      <script>
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove',(e)=>{
+            cursor.style.left=e.clientX+'px';
+            cursor.style.top=e.clientY+'px';
+        })
+      </script>
       <script>
         "use strict";
   
