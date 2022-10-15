@@ -179,5 +179,8 @@ def products3(request):
 def relax(request):
     return render(request,'authen/relax.html')
 
+def games(request):
+    return render(request,'authen/games.html')
+
 
 
