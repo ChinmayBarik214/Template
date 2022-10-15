@@ -12,7 +12,7 @@
 <body>
     <header>
         <div>
-            <a href="/homepage"><img src="{% static 'images/Logo.png' %}" height="100" width="100"></a>
+            <a href="/homepage"><img src="{% static 'images/Logo2.png' %}" height="100" width="100"></a>
         </div>
         <div class="header-mid">
             <span>
@@ -68,6 +68,7 @@
             position: sticky;
             top: 0;
             transition: background-color 0.3s ease-out;
+            z-index: 2;
         }
         header div {
             display: flex;
@@ -99,7 +100,7 @@
             height: 100%;
             width: 0;
             position: fixed;
-            z-index: 1;
+            z-index: 3;
             top: 0;
             right: 0;
             background-color: #FEF6F3;
@@ -170,7 +171,7 @@
             background-clip: padding-box;
             position: fixed;
             `;
-            document.getElementById("arrow").style.marginLeft="250px";
+            document.getElementById("arrow").style.marginLeft="0px";
         }
         function closeNav() {
             document.getElementById("mySidebar").style.cssText = `
@@ -249,21 +250,19 @@
     </style>
     <section class="banner">
         <video autoplay muted loop id="myVideo">
-            <source src="{% static 'images/4rsmokehouse-video.mov' %}" type="video/mp4">
+            <source src="{% static 'images/girl-on-phone.mp4' %}" type="video/mp4">
         </video>
         <div class="backdrop"></div>
-        <div class="banner-head">
-            Family Owned. Locally Made.<br>
-            Community Focused.<br>
-            <a href="#" class="banner-btn">Order takeout & delivery</a>
-            <a href="#" class="banner-btn">order catering</a>
+        <div class="banner-head">Feeling better starts<br> with a single message<br>
+            <a href="/about" class="banner-btn">Send a message</a>
+            <!-- <a href="#" class="banner-btn">order catering</a> -->
         </div>
     </section>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
         video {
-            background-position: center;
-            transform: scale(2.25);
+            background-position: top;
+            transform: scale(1.5);
             height: 100%;
         }
         section.banner {
@@ -274,7 +273,7 @@
             overflow: hidden;
             background-color: gray;
             z-index: -1;
-            height: 800px;
+            height: 600px;
             width: 100%;
             position: absolute;
             top: 0;
@@ -282,7 +281,7 @@
         div.backdrop {
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.25);
             position: absolute;
             top: 0;
         }
@@ -295,10 +294,11 @@
             text-align: center;
             padding: 0 100px;
             text-transform: uppercase;
+            z-index: 3;
         }
         .banner-btn {
             font-size: 1rem;
-            background-color: #E0592A;
+            background-color: hsl(15, 75%, 52%);
             margin: 0 16px;
             padding: 16px 32px;
             border-radius: 5px;
@@ -326,7 +326,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 700px;
+            margin-top: 500px;
             height: 60px;
             background-color: #fff;
             text-transform: uppercase;
@@ -352,6 +352,152 @@
             border-radius: 5px;
         }
     </style>
+    <section class="canvas1-container">
+        <canvas id="canvas1">
+        </canvas>
+        <span style="position: absolute; top: 0; left: 0;"><!-- Enter Text Here --></span>
+    </section>
+        <style>
+            .canvas1-container {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+            }
+            #canvas1 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(#ffc38c,#ff9b40);
+            }
+        </style>
+        <script>
+    const canvas=document.getElementById('canvas1');
+    const ctx=canvas.getContext("2d");
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+    
+    let particlesArray;
+    //get mouse psoition
+    let mouse={
+        x: null,
+        y: null,
+        radius: (canvas.height/80)*(canvas.width/80),
+    }
+    window.addEventListener('mousemove',
+        function(event){
+            mouse.x=event.x;
+            mouse.y=event.y
+        }
+    );
+    //create particle
+    class Particle{
+        constructor(x,y,directionX,directionY,size,color){
+            this.x=x;
+            this.y=y;
+            this.directionX=directionX;
+            this.directionY=directionY;
+            this.size=size;
+            this.color=color;
+        }
+        //method to draw individual particle
+        draw(){
+            ctx.beginPath();
+            ctx.arc(this.x,this.y,this.size,0, Math.PI * 2 ,false);
+            ctx.fillStyle='#8C5523';
+            ctx.fill();
+        }
+        //check particle position ,check mouse position,move the particle,draw the particle
+        update(){
+            //check if particle is still within canvas
+            if(this.x>canvas.width || this.x<0){
+                this.directionX=-this.directionX;
+            }
+            if(this.y>canvas.height || this.y<0){
+                this.directionY=-this.directionY;
+            }
+            //check collision detection - mouse position / particle position
+            let dx=mouse.x - this.x;
+            let dy=mouse.y - this.y;
+            let distance=Math.sqrt(dx*dx + dy*dy);
+            if(distance<mouse.radius + this.size){
+                if(mouse.x<this.x && this.x<canvas.width - this.size*10){
+                    this.x+=10;
+                }
+                if(mouse.x>this.x && this.x > this.size*10){
+                    this.x -=10;
+                }
+                if(mouse.y < this.y && this.y < canvas.height - this.size*10){
+                    this.y +=10
+                }
+                if(mouse.y>this.y && this.y > this.size*10){
+                    this.y -= 10;
+                }
+            }
+            //move particle
+            this.x += this.directionX;
+            this.y += this.directionY;
+            //draw particle
+            this.draw();
+        }
+    }
+    
+    //create particle array
+    function init(){
+        particlesArray=[];
+        let numberParticles = (canvas.height*canvas.width)/9000;
+        for(let i=0; i< numberParticles*2; i++){
+            let size=(Math.random()*5)+1;
+            let x =(Math.random()*((innerWidth-size*2) - (size*2))+size*2);
+            let y =(Math.random()*((innerHeight-size*2) - (size*2))+size*2);
+            let directionX=(Math.random()*5) - 2.5;
+            let directionY=(Math.random()*5) - 2.5;
+            let color='#8C5523';
+            particlesArray.push(new Particle(x,y,directionX,directionY,size,color));
+        }
+    }
+    //animation loop
+    function animate(){
+        requestAnimationFrame(animate);
+        ctx.clearRect(0,0,innerWidth,innerHeight);
+    
+        for(let i=0 ; i<particlesArray.length; i++){
+            particlesArray[i].update();
+        }
+        connect()
+    }
+    //check if particles are close enough to draw line between them
+    function connect(){
+        let opacityValue= 1;
+        for(let a=0 ; a< particlesArray.length ;a++){
+            for(let b=0 ; b<particlesArray.length ; b++){
+                let distance=((particlesArray[a].x - particlesArray[b].x)*(particlesArray[a].x - particlesArray[b].x))+((particlesArray[a].y - particlesArray[b].y)*(particlesArray[a].y - particlesArray[b].y));
+                if(distance < (canvas.width/7)*(canvas.height/7)){
+                    opacityValue=1-(distance/20000);
+                    ctx.strokeStyle='rgba(140,85,31,' + opacityValue + ')';
+                    ctx.lineWidth=1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x,particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x,particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+    //resize event
+    window.addEventListener('resize',
+        function(){
+            canvas.width=this.innerWidth;
+            canvas.height=this.innerHeight;
+            mouse.radius=((canvas.height/80)*(canvas.height/80));
+            init()
+        }
+    );
+    
+    init();
+    animate();
+        </script>
     <!-- 4 Item Grid-->
     <div class="four-container">
         <div class="four-item1"></div>
@@ -380,7 +526,7 @@
     <style>
         .four-item2{
             opacity: 0;
-            transform: translateX(30px);
+            transform: translateX(-30px);
             transition: all 1s ease-in-out;
         }
         .four-item3{
@@ -630,35 +776,97 @@
     </style>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <section class="contact-sec">
-        <h2>Send us feedback</h2>
         <div class="contact-con">
-        <div class="contact-left">
-            <label for="username">Username:</label>
+        <form class="contact-left" method="POST" action="/feedback">
+            {% csrf_token %}
+            <span class="contact-span">Send us feedback</span>
+            <label for="username"><h2>Username:</h2></label>
             <input type="text" name="username" id="username">
-            <label for="email">Email:</label>
+            <label for="email"><h2>Email:</h2></label>
             <input type="text" name="email" id="email">
-            <label for="feedback">Please provide your feedback</label>
-            <input type="text" name="feedback" id="feedback">
-            <input type="submit">
-        </div>
+            <label for="journey"><h2>Please provide your feedback:</h2></label>
+            <textarea id="journey" name="journey" class="input-textarea" placeholder="Enter your response here…"></textarea>
+            <button type="submit" id="submit" class="submit-btn">Submit</button>
+        </form>
         <div>
-            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_qq6gioyz.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_qq6gioyz.json"  background="transparent"  speed="1"  style="height: 100%"  loop  autoplay></lottie-player>
         </div>
         </div>
     </section>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        .contact-span {
+            text-align: center;
+            font-size: 2rem;
+        }
         .contact-sec {
             font-family: 'Montserrat', sans-serif;
+            background-color: #E1E1DF;
+            /* background-color: linear-gradient(-90deg, #dfdfdd, #f8f8f7); */
+            color: #fff;
+        }
+        .contact-con {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url("{%static "images/plant.jpg" %}");
+        }
+        .contact-left {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 5px;
+        }
+        .contact-sec h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.125rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+        }
+        .contact-sec input {
+            width: 100%;
+            margin-bottom: 12px;
+            padding: 0 15px;
+            background-color: #fff;
+            border-radius: 1px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            max-width: 835px;
+            min-height: 46px;
+            border: 1px solid #000;
+        }
+        .contact-sec textarea {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            margin: 0 0 5px;
+            max-width: 835px;
+            min-height: 120px;
+            padding: 0.625px;
+            resize: vertical;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            max-width: 835px;
+            padding: 0.75rem;
+            background-color: #37af65;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
         }
         .contact-con {
             display: flex;
             justify-content: space-between;
-            padding: 0 60px 0;
+            padding: 20px 60px;
         }
         .contact-left {
             display: flex;
             flex-direction: column;
+            width: 100%;
         }
     </style>
 </body>

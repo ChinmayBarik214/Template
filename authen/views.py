@@ -2,6 +2,9 @@
 from email import message
 import smtplib, ssl
 from email.message import EmailMessage
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
 
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -88,10 +91,11 @@ def signout(request):
 # email=""
 # username=""
 
-def blogs(request):
+def feedback(request):
     if request.method=='POST':
         username = request.POST["username"]
         email= request.POST["email"]
+        journey=request.POST["journey"]
 
         # msg["To"] = email
         # msg['Subject']="Hi, "+username+" Thank you for Subscription for our BlogPost Services"
@@ -105,19 +109,44 @@ def blogs(request):
         sender_email = "abhaychandra2499@gmail.com"  # Enter your address
         receiver_email = email # Enter receiver address
 
-        msg="Hi, "+username+" Thank you for Subscription for our BlogPost Services"
+        message = MIMEMultipart("alternative")
+        message["Subject"] = "multipart test"
+        message["From"] = sender_email
+        message["To"] = receiver_email
+
+        html = """\
+                    <html>
+                    <body>
+                        <p>Hi,<br>
+                        How are you?<br>
+                        
+                        <h2>Thank you for expressing your thought to us</h2> <br>
+                        We have received your input and assigned special professionals to address it
+                        Cheers!
+                        </p>
+                        <br>
+                        <br>
+                        <!-- <h4>The Response we recieved was: </h4> -->
+                    </body>
+                    </html>
+                """
+        
+        part1 = MIMEText(html, "html")
+
+        message.attach(part1)
+        
+        
 
         # Create a secure SSL context
         context = ssl.create_default_context()
 
         with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
             server.login(sender_email, password)
-            server.sendmail(sender_email, receiver_email, msg)
-            
-
-
+            server.sendmail(sender_email, receiver_email, message.as_string())
         
-    return render(request,'authen/blogs.html')
+    return redirect('homepage')
+
+            
 
 # def read_info():
 #     with open('susinfo.csv', 'r') as file:
@@ -127,3 +156,25 @@ def blogs(request):
 #             a.append(row)
 #         useremail=row[-1]
 #         return useremail
+
+def about(request):
+    return render(request,'authen/about.html')
+
+
+
+
+def todo(request):
+    return render(request,'authen/todo.html')
+
+
+
+def ventfeels(request):
+    return render(request,'authen/ventfeels.html')
+
+
+
+def products3(request):
+    return render(request,'authen/products3.html')
+
+
+
