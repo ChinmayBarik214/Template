@@ -176,8 +176,8 @@ def ventfeels(request):
 def products3(request):
     return render(request,'authen/products3.html')
 
-def calmball(request):
-    return render(request,'authen/calmball.html')
+def relax(request):
+    return render(request,'authen/relax.html')
 
 
 
