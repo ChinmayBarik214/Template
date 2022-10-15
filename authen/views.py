@@ -127,3 +127,25 @@ def blogs(request):
 #             a.append(row)
 #         useremail=row[-1]
 #         return useremail
+
+def about(request):
+    return render(request,'authen/about.html')
+
+
+
+
+def todo(request):
+    return render(request,'authen/todo.html')
+
+
+
+def ventfeels(request):
+    return render(request,'authen/ventfeels.html')
+
+
+
+def product3(request):
+    return render(request,'authen/product3.html')
+
+
+
