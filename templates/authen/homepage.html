@@ -776,7 +776,8 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <section class="contact-sec">
         <div class="contact-con">
-        <form class="contact-left">
+        <form class="contact-left" method="POST" action="/feedback">
+            {% csrf_token %}
             <span class="contact-span">Send us feedback</span>
             <label for="username"><h2>Username:</h2></label>
             <input type="text" name="username" id="username">

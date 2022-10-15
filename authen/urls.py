@@ -14,6 +14,8 @@ urlpatterns = [
     path('todo', views.todo, name="todo"),
     path('ventfeels', views.ventfeels, name="ventfeels"),
     path('product3', views.product3, name="product3"),
+    path('feedback', views.feedback, name="feedback"),
+
 
 
 
