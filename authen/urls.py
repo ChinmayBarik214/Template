@@ -17,6 +17,10 @@ urlpatterns = [
     path('feedback', views.feedback, name="feedback"),
     path('relax', views.relax, name="relax"),
     path('games', views.games, name="games"),
+    path('fruitninga', views.fruitninga, name="fruitninga"),
+    path('colorblast', views.colorblast, name="colorblast"),
+    path('snake', views.snake, name="snake"),
+
     path('doctinfo', views.doctinfo, name="doctinfo"),
 
 

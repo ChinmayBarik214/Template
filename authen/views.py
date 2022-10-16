@@ -186,4 +186,14 @@ def games(request):
     return render(request,'authen/games.html')
 
 
+def fruitninga(request):
+    return render(request,'authen/fruitninga.html')
+
+def colorblast(request):
+    return render(request,'authen/colorblast.html')
+
+def snake(request):
+    return render(request,'authen/snake.html')
+
+
 
