@@ -120,7 +120,9 @@ def feedback(request):
                         <p>Hi,<br>
                         How are you?<br>
                         
-                        <h2>Thank you for expressing your thought to us</h2> <br>
+                        <h1>Thank you for expressing your Feedback to us!!</h1> <br>
+                        <h2>We have also received your Thoughts from VENT IT OUT</h2>
+
                         We have received your input and assigned our special professional, Dr Sangeeeta Srivastava, to address it
                         Cheers!
 
