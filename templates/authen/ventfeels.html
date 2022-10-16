@@ -252,13 +252,14 @@
     <style>
     </style>
     <form class="vent-con" action="/ventfeels" method="post">
+    {%csrf_token%}
     <h1 class="vent-h1">Vent it out</h1>
     <div class="vent-int-con">
     <button class="round-btn" id="action" type="button" onclick="toggle()"><i class="fa-solid fa-microphone"></i></button>
     <button class="round-btn" id="action2" type="button" onclick="toggle2()"><i class="fa-solid fa-stop"></i></button>
     </div>
     <textarea type="text" name="vent" id="transcript" placeholder="Need to get something off your chest?" class="keyboardInput"></textarea>
-    <button name="submit" type="submit" class="submit">Submit</button>
+    <button name="submit" type="submit" class="submit" onclick="alert('Thanks for expressing your feelings to us.We have recieved your thoughts.')">Submit</button>
     </form>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
