@@ -1,0 +1,181 @@
+{%load static%}
+<html>
+<head>
+  <title>Simple Profile Page</title>
+  <!-- <link rel="stylesheet" href="assets/css/index.css"> -->
+  <style>
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: sans-serif;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.button {
+    background-color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Style For Navigation */
+.nav {
+    height: 50px;
+    line-height: 50px;
+    background-color: white;
+    border-bottom: solid 2px #60a2ff;
+}
+
+.nav h1 {
+    color: #272727;
+    font-size: 18px;
+}
+
+/* Style For Content */
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+/* Style For Profile Section */
+.profile-section {
+    float: left;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    padding-top: 30px;
+    background: linear-gradient(rgba(65, 100, 201, 0.8), rgba(65, 100, 201, 0.8)), url("{%static 'images/profile-bg.jpg'%}");
+    background-size: cover;
+    background-position: top;
+}
+
+.profile-photo {
+    width: 50%;
+    border-radius: 50%;
+    border: solid 3px white;
+}
+
+.profile-name {
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.profile-detail {
+    color: #fff;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.profile-follow {
+    background-color: #39b85d;
+    color: white;
+    transition: all 0.3s;
+    font-size: 15px;
+}
+
+.profile-follow:hover {
+    background-color: white;
+    color: #4c99b8;
+    transition: all 0.3s;
+}
+
+/* Style For Detail Section */
+.detail-section {
+    float: left;
+    width: 75%;
+    padding-top: 30px;
+}
+
+/* Card Style */
+.card {
+    background-color: white;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #2d2d2d;
+    border-bottom: solid 2px #dbdbdb;
+}
+
+.card-body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="nav">
+  <div class="container">
+    <h1>MY PROFstILE</h1>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <div class="container">
+      <img src="{%static 'images/mom.png'%}" class="profile-photo">
+      <p class="profile-name">Dr. Sangeeta Srivastava</p>
+      <p class="profile-detail">Dr Sangeeta Srivastava is a practising Gynaecologist with 2 setups, one established in Kakadeo and other in Dada Nagar, Both in Kanpur, Uttar Pradesh </p>
+      
+    </div>
+  </div>
+
+  <!-- Detail Section -->
+  <div class="detail-section">
+    <div class="container">
+
+      <div class="card">
+        <div class="container">
+          <div class="card-title">Experience in Mental Health</div>
+          <div class="card-body">
+            With Sophistication of Years, dealing with numerous types of patients, she has aquired in-depth knowledge on how to counsel Mentally disturbed people.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="container">
+          <div class="card-title">Developer's(Her Son) Review</div>
+          <div class="card-body">
+            Abhay Chandra here, I believe that my Mom is equivalent to Lord Krishna, the way the Supreme Lord guides Arjuna, similarlly she answers all my questions and helps me cope with stress.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="container">
+          <div class="card-title">CONTACT</div>
+          <div class="card-body">
+            PHONE NO: 9415404602 , 8756941925
+            EMAIL: sangri369@gmail.com
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
