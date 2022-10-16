@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(r(pkz#oh-#_ngy(+#m5tm-e((su0o1&vply==w$l3l3kznfq#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [127.0.0.1,'mentify-cf01.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','mentify-cf01.herokuapp.com']
 
 
 # Application definition
