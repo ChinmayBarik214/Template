@@ -121,11 +121,13 @@ def feedback(request):
                         How are you?<br>
                         
                         <h2>Thank you for expressing your thought to us</h2> <br>
-                        We have received your input and assigned special professionals to address it
+                        We have received your input and assigned our special professional, Dr Sangeeeta Srivastava, to address it
                         Cheers!
+
                         </p>
                         <br>
                         <br>
+                        <b><H4>Dr. Sangeeta Srivastava <br> Phone: 9415404602, 8756941925 <br>Email: sangsri369@gmail.com</p>
                         <!-- <h4>The Response we recieved was: </h4> -->
                     </body>
                     </html>
@@ -184,6 +186,16 @@ def relax(request):
 
 def games(request):
     return render(request,'authen/games.html')
+
+
+def fruitninga(request):
+    return render(request,'authen/fruitninga.html')
+
+def colorblast(request):
+    return render(request,'authen/colorblast.html')
+
+def snake(request):
+    return render(request,'authen/snake.html')
 
 
 
