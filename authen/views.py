@@ -171,6 +171,9 @@ def todo(request):
 def ventfeels(request):
     return render(request,'authen/ventfeels.html')
 
+def doctinfo(request):
+    return render(request,'authen/doctinfo.html')
+
 
 
 def products3(request):
