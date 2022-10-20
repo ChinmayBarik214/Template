@@ -1,1 +1,0 @@
-web: gunicorn hackom2022.wsgi --log-file -
